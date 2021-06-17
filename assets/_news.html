@@ -1,0 +1,20 @@
+<h3> News (<a class="news-link" id="news-show-all">all</a>/<a class="news-link" id="news-show-2021">21</a>)</h3>
+
+<script>
+  function create_news_links() {
+    $(".news-link").click(function() {
+      var year = this.id.substring(10);
+      $(".news-entry").hide();
+      if (year == "all") {
+        year = "entry";
+      }
+      $(".news-" + year).show();
+    });
+  }
+  $(create_news_links);
+</script>
+
+<ul>
+<li class="news-entry news-2021 news-latest" ><strong>[13/04/2021]</strong> C3 is accepted to HotOS!</li>
+<li class="news-entry news-2021 news-latest" ><strong>[12/03/2021]</strong> NrOS is accepted to OSDI'21!</li>
+</ul>
