@@ -57,7 +57,7 @@ html {
 }
 
 /* member */
-div#group-leaders, div#phd-students, div#master-s-students {
+div#group-leaders, div#postdocs, div#phd-students, div#master-s-students {
   display: block;
 }
 

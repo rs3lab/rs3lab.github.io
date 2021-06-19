@@ -12,7 +12,7 @@ body {
 }
 
 /* for list-group-items nested within a list-group-item, reset the bottom
-   padding of the last item, b/c the containing item has paddimg already 
+   padding of the last item, b/c the containing item has paddimg already
  */
 .list-group-item .list-group-item:last-child {
     padding-bottom: 0px;
@@ -23,23 +23,23 @@ body {
 }
 
 .tag-0 {
-    font-size: 21pt;
+    font-size: 16pt;
 }
 
 .tag-1 {
-    font-size: 18pt;
+    font-size: 13pt;
 }
 
 .tag-2 {
-    font-size: 15pt;
+    font-size: 10pt;
 }
 
 .tag-3 {
-    font-size: 12pt;
+    font-size: 8pt;
 }
 
 .tag-4 {
-    font-size: 9pt;
+    font-size: 6pt;
 }
 
 #aboutme {
@@ -175,7 +175,7 @@ figure.floatcenter, .align-center {
     background-repeat: no-repeat;
     background-position: top center;
     background-attachment: scroll;
-    background-size: cover; 
+    background-size: cover;
     background-color: #C4C4C4;
     margin: 0 0 20px;
     padding: 70px 0; /*controls padding around inner text*/
@@ -220,4 +220,22 @@ figure.floatcenter, .align-center {
     #banner .intro{
         font-size: 16px;
     }
+}
+
+:target:before {
+  content:"";
+  display:block;
+  height:50px;
+  /* fixed header height*/
+
+  margin:-50px 0 0;
+  /* negative fixed header height */
+}
+
+.gap-right {
+    margin-right: 10px;
+}
+
+.gap-left {
+  margin-left: 10px;
 }
