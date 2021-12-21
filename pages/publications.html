@@ -12,13 +12,13 @@
 <link rel="canonical" href="../pages/publications.html">
 
         <meta name="author" content="RS3Lab" />
-        <meta name="description" content="/* show scroll bar to prevent jumps when filtering */ /* html { overflow-y: scroll; } */ /* hide sidebar and title */ .entry-title { display: none; } #sidebar { display: none; } 2021 Birds of a Feather Flock Together: Scaling RDMA RPCs with FLOCK Sumit Kumar Monga, Sanidhya Kashyap, and Changwoo Min. SOSP 2021. @inproceedings{monga:flock, title = {{Birds of a …" />
+        <meta name="description" content="/* show scroll bar to prevent jumps when filtering */ /* html { overflow-y: scroll; } */ /* hide sidebar and title */ .entry-title { display: none; } #sidebar { display: none; } 2021 Birds of a Feather Flock Together: Scaling RDMA RPCs with FLOCK Sumit Kumar Monga, Sanidhya Kashyap, and Changwoo Min. SOSP 2021. RDMA-capable networks are gaining traction with datacenter …" />
 
     <meta property="og:site_name" content="Robust Scalable Systems Software Lab" />
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="Publications"/>
     <meta property="og:url" content="../pages/publications.html"/>
-    <meta property="og:description" content="/* show scroll bar to prevent jumps when filtering */ /* html { overflow-y: scroll; } */ /* hide sidebar and title */ .entry-title { display: none; } #sidebar { display: none; } 2021 Birds of a Feather Flock Together: Scaling RDMA RPCs with FLOCK Sumit Kumar Monga, Sanidhya Kashyap, and Changwoo Min. SOSP 2021. @inproceedings{monga:flock, title = {{Birds of a …" />
+    <meta property="og:description" content="/* show scroll bar to prevent jumps when filtering */ /* html { overflow-y: scroll; } */ /* hide sidebar and title */ .entry-title { display: none; } #sidebar { display: none; } 2021 Birds of a Feather Flock Together: Scaling RDMA RPCs with FLOCK Sumit Kumar Monga, Sanidhya Kashyap, and Changwoo Min. SOSP 2021. RDMA-capable networks are gaining traction with datacenter …" />
 
 
 
@@ -28,7 +28,7 @@
 
     <link href="../theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
-        <link href="../assets/css/rs3lab.css?1640087762.9242926" rel="stylesheet">
+        <link href="../assets/css/rs3lab.css?1640089926.5254736" rel="stylesheet">
 
 
 
@@ -98,6 +98,8 @@ Robust Scalable Systems Software Lab            </a>
 <div class="pub" data-type="Conference paper" data-topic="Network" data-key="monga:flock">
  <div class="pub-meta">
   <div class="pub-links">
+   <a title="Slides" href="../assets/papers/2021/monga:flock-slides.pdf"><i class="icon-slides"></i></a>
+   <a title="Paper" href="../assets/papers/2021/monga:flock.pdf"><i class="icon-file"></i></a>
   </div>
   <span class="pub-title">Birds of a Feather Flock Together: Scaling RDMA RPCs with FLOCK</span>
   <a href="#monga:flock" class="pub-expand"><i class="icon-expand"></i></a>
@@ -106,6 +108,36 @@ Robust Scalable Systems Software Lab            </a>
   <abbr class="pub-in" title="Proceedings of the 28th ACM Symposium on Operating Systems Principles (SOSP), Koblenz, Germany, October 2021.">SOSP 2021.</abbr>
  </div>
  <div class="pub-details">
+<p>RDMA-capable networks are gaining traction with datacenter
+deployments due to their high throughput, low latency,
+CPU efficiency, and advanced features, such as remote memory
+operations. However, efficiently utilizing RDMA capability
+in a common setting of high fan-in, fan-out asymmetric
+network topology is challenging. For instance, using RDMA
+programming features comes at the cost of connection scalability,
+which does not scale with increasing cluster size. To
+address that, several works forgo some RDMA features by
+only focusing on conventional RPC APIs.</p>
+<p>In this work, we strive to exploit the full capability of
+RDMA, while scaling the number of connections regardless
+of the cluster size. We present Flock, a communication
+framework for RDMA networks that uses hardware provided
+reliable connection. Using a partially shared model, Flock
+departs from the conventional RDMA design by enabling
+connection sharing among threads, which provides significant
+performance improvements contrary to the widely held
+belief that connection sharing deteriorates performance. At
+its core, Flock uses a connection handle abstraction for
+connection multiplexing; a new coalescing-based synchronization
+approach for efficient network utilization; and a load-control
+mechanism for connections with symbiotic send-recv
+scheduling, which reduces the synchronization overheads
+associated with connection sharing along with ensuring fair
+utilization of network connections. We demonstrate the benefits
+for a distributed transaction processing system and an
+in-memory index, where it outperforms other RPC systems
+by up to 88% and 50%, respectively, with significant reductions
+in median and tail latency.</p>
   <pre>@inproceedings{monga:flock,
   title        = {{Birds of a Feather Flock Together: Scaling RDMA RPCs with FLOCK}},
   author       = {Sumit Kumar Monga and Sanidhya Kashyap and Changwoo Min},
@@ -120,6 +152,9 @@ Robust Scalable Systems Software Lab            </a>
 <div class="pub" data-type="Conference paper" data-topic="Concurrency" data-key="kim:pactree">
  <div class="pub-meta">
   <div class="pub-links">
+   <a title="Homepage" href="https://github.com/cosmoss-vt/pactree"><i class="icon-www"></i></a>
+   <a title="Slides" href="../assets/papers/2021/kim:pactree-slides.pdf"><i class="icon-slides"></i></a>
+   <a title="Paper" href="../assets/papers/2021/kim:pactree.pdf"><i class="icon-file"></i></a>
   </div>
   <span class="pub-title">PACTree: A High Performance Persistent Range Index Using PAC Guidelines</span>
   <a href="#kim:pactree" class="pub-expand"><i class="icon-expand"></i></a>
@@ -128,6 +163,31 @@ Robust Scalable Systems Software Lab            </a>
   <abbr class="pub-in" title="Proceedings of the 28th ACM Symposium on Operating Systems Principles (SOSP), Koblenz, Germany, October 2021.">SOSP 2021.</abbr>
  </div>
  <div class="pub-details">
+<p>Non-Volatile Memory (NVM), which provides relatively fast
+and byte-addressable persistence, is now commercially
+available. However, we cannot equate a real NVM with a slow
+DRAM, as it is much more complicated than we expect. In
+this work, we revisit and analyze both NVM and NVM-
+specific persistent memory indexes. We find that there is
+still a lot of room for improvement if we consider NVM hardware,
+its software stack, persistent index design, and concurrency
+control. Based on our analysis, we propose Packed
+Asynchronous Concurrency (PAC) guidelines for designing
+high-performance persistent index structures. The key
+idea behind the guidelines is to 1) access NVM hardware in
+a packed manner to minimize its bandwidth utilization and
+2) exploit asynchronous concurrency control to decouple
+the long NVM latency from the critical path of the index.</p>
+<p>We develop PACTree, a high-performance persistent
+range index following the PAC guidelines. PACTree is a
+hybrid index that employs a trie index for its internal nodes
+and B+-tree-like leaf nodes. The trie index structure packs
+partial keys in internal nodes. Moreover, we decouple the trie
+index and B+-tree-like leaf nodes. The decoupling allows us
+to prevent blocking concurrent accesses by updating internal
+nodes asynchronously. Our evaluation shows that PACTree
+outperforms state-of-the-art persistent range indexes by 7x
+in performance and 20x in 99.99 percentile tail latency.</p>
   <pre>@inproceedings{kim:pactree,
   title        = {{PACTree: A High Performance Persistent Range Index Using PAC Guidelines}},
   author       = {Wook-Hee Kim and R. Madhava Krishnan and Xinwei Fu and Sanidhya Kashyap and Changwoo Min},
@@ -142,6 +202,8 @@ Robust Scalable Systems Software Lab            </a>
 <div class="pub" data-type="Conference paper" data-topic="System" data-key="bhardwaj:nros">
  <div class="pub-meta">
   <div class="pub-links">
+   <a title="Homepage" href="https://nrkernel.systems/"><i class="icon-www"></i></a>
+   <a title="Paper" href="../assets/papers/2021/bhardwaj:nros.pdf"><i class="icon-file"></i></a>
   </div>
   <span class="pub-title">NrOs: Effective Replication and Sharing in an Operating System</span>
   <a href="#bhardwaj:nros" class="pub-expand"><i class="icon-expand"></i></a>
@@ -214,6 +276,7 @@ use-after-free threats.</p>
 <div class="pub" data-type="Conference paper" data-topic="System" data-key="park:c3">
  <div class="pub-meta">
   <div class="pub-links">
+   <a title="Slides" href="../assets/papers/2021/park:c3-slides.pdf"><i class="icon-slides"></i></a>
    <a title="Paper" href="../assets/papers/2021/park:c3.pdf"><i class="icon-file"></i></a>
   </div>
   <span class="pub-title">Contextual Concurrency Control</span>
@@ -254,6 +317,7 @@ overhead.</p>
 <div class="pub" data-type="Conference paper" data-topic="System" data-key="calciu:kona">
  <div class="pub-meta">
   <div class="pub-links">
+   <a title="Homepage" href="https://github.com/project-kona/asplos21-ae"><i class="icon-www"></i></a>
    <a title="Paper" href="../assets/papers/2021/calciu:kona.pdf"><i class="icon-file"></i></a>
   </div>
   <span class="pub-title">Rethinking Software Runtimes for Disaggregated Memory</span>
@@ -299,6 +363,7 @@ data amplification by 2-10X, compared to state-of-the-art systems.</p>
 <div class="pub" data-type="Conference paper" data-topic="Fuzzing" data-key="xu:krace">
  <div class="pub-meta">
   <div class="pub-links">
+   <a title="Homepage" href="https://github.com/sslab-gatech/krace"><i class="icon-www"></i></a>
    <a title="Slides" href="../assets/papers/2020/xu:krace-slides.pdf"><i class="icon-slides"></i></a>
    <a title="Paper" href="../assets/papers/2020/xu:krace.pdf"><i class="icon-file"></i></a>
   </div>
@@ -645,6 +710,7 @@ an under-committed scenario for various real-world workloads on an
 <div class="pub" data-type="Conference paper" data-topic="System" data-key="min:solros">
  <div class="pub-meta">
   <div class="pub-links">
+   <a title="Homepage" href="https://github.com/cosmoss-vt/solros"><i class="icon-www"></i></a>
    <a title="Slides" href="../assets/papers/2018/min:solros-slides.pdf"><i class="icon-slides"></i></a>
    <a title="Paper" href="../assets/papers/2018/min:solros.pdf"><i class="icon-file"></i></a>
   </div>
