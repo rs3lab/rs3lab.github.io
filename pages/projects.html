@@ -12,12 +12,13 @@
 <link rel="canonical" href="../pages/projects.html">
 
         <meta name="author" content="RS3Lab" />
+        <meta name="description" content="Below are some projects that our group is actively working on. If you are a Ph.D. student, email Sanidhya. Transient Operating System Design The main goal of this big project is to dynamically modify various subsystems to cater to heterogeneous hardware and varying application requirements. Most of the prior …" />
 
     <meta property="og:site_name" content="Robust Scalable Systems Software Lab" />
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="Projects"/>
     <meta property="og:url" content="../pages/projects.html"/>
-    <meta property="og:description" content="" />
+    <meta property="og:description" content="Below are some projects that our group is actively working on. If you are a Ph.D. student, email Sanidhya. Transient Operating System Design The main goal of this big project is to dynamically modify various subsystems to cater to heterogeneous hardware and varying application requirements. Most of the prior …" />
 
 
 
@@ -27,7 +28,7 @@
 
     <link href="../theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
-        <link href="../assets/css/rs3lab.css?1640090069.3096504" rel="stylesheet">
+        <link href="../assets/css/rs3lab.css?1642934585.5416248" rel="stylesheet">
 
 
 
@@ -79,7 +80,59 @@ Robust Scalable Systems Software Lab            </a>
         <h1 class="entry-title">Projects</h1>
         
         <div class="entry-content">
-            
+            <p>Below are some projects that our group is actively working on. If you are a <strong>Ph.D.</strong> student, email <a class="reference external" href="mailto:sanidhya.kashyap&#64;epfl.ch">Sanidhya</a>.</p>
+<div class="section" id="transient-operating-system-design">
+<h2>Transient Operating System Design</h2>
+<p>The main goal of this big project is to dynamically modify various subsystems to
+cater to heterogeneous hardware and varying application requirements.  Most of
+the prior works focus on IO, while our focus is mostly on the concurrency
+aspect. In particular, we are exploring how applications can fine-tune the
+concurrency control mechanisms and underlying stack to improve their
+performance. Some of the projects are as follows:</p>
+<ol class="arabic simple">
+<li>A concurrency control runtime to efficiently switch between locks at various
+granularity.</li>
+<li>New low-level language to support lock design while ensuring lock
+properties, such as mutual exclusion, starvation avoidance, and fairness.</li>
+<li>A lightweight hypervisor that caters to various forms of virtualization:
+bare-metal to serverless.</li>
+</ol>
+<p>We will further extend this project to reason about data structures' concurrency
+and consistency.</p>
+</div>
+<div class="section" id="scalable-storage-stack">
+<h2>Scalable Storage Stack</h2>
+<p>With blazing fast IO devices, saturating them is becoming a difficult task.
+Unfortunately, the current OS stack is the major bottleneck that is still
+operating in the era of 2000s. As a part of this big project, we are looking at
+ways to redesign the OS stack to support fast storage devices. We are working
+on designing new ways to improves the design of file systems. Some of the
+projects are as follows:</p>
+<ol class="arabic simple">
+<li>Designing new techniques to saturate and scale operations
+for various storage media.</li>
+<li>Understanding the implication of persistent memory (PM) over traditional
+storage media, such as SSDs.</li>
+<li>Offloading file system stack to computational SSDs.</li>
+<li>Re-architecting OS for microsecond IO.</li>
+</ol>
+</div>
+<div class="section" id="concurrency-primitives-and-frameworks">
+<h2>Concurrency Primitives and Frameworks</h2>
+<p>With our particular interest in designing new synchronization primitives and
+concurrency frameworks, we are looking at designing new primitives that further
+squeeze the performance out of hardware for two scenarios: heterogeneous
+hardware (such as BIG/Little architectures and high bandwidth memory) and
+rack-scale systems. We are revisiting some of the primitives and trying to
+reason about their practicality. Some of the ongoing projects are as follows:</p>
+<ol class="arabic simple">
+<li>Making advanced synchronization primitives (combining/delegation) a reality.</li>
+<li>Revisiting the design of locking primitives for very large multicore
+machines.</li>
+<li>Reasoning about various bugs in a concurrent environment.</li>
+</ol>
+</div>
+
         </div>
     </section>
         </div>
