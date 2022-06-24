@@ -17,6 +17,7 @@
  <div class="pub-meta">
   <div class="pub-links">
    <a title="Homepage" href="https://rs3lab.github.io/OdinFS/"><i class="icon-www"></i></a>
+   <a title="Paper" href="../assets/papers/2022/zhou:odinfs.pdf"><i class="icon-file"></i></a>
   </div>
   <span class="pub-title">Odinfs: Scaling PM performance with Opportunistic Delegation</span>
   <a href="#zhou:odinfs" class="pub-expand"><i class="icon-expand"></i></a>
@@ -25,6 +26,8 @@
   <abbr class="pub-in" title="Proceedings of the 16th USENIX Symposium on Operating Systems Design and Implementation (OSDI), Carlsbad, CA, July 2022.">OSDI 2022.</abbr>
  </div>
  <div class="pub-details">
+<p>Existing file systems for persistent memory (PM) exploit its byte-addressable non-volatile access with low latency and high bandwidth. However, they do not utilize two unique PM properties effectively. The first one is contention awareness, i.e., a small number of threads cannot thoroughly saturate the PM bandwidth, while many concurrent accesses lead to significant PM performance degradation. The second one is NUMA awareness, i.e., exploiting the remote PM efficiently, as accessing remote PM naively leads to significant performance degradation.</p>
+<p>We present Odinfs, a NUMA-aware scalable datapath PM file system that addresses these two challenges using a novel opportunistic delegation scheme. Under this scheme, Odinfs decouples the PM accesses from application threads with the help of background threads that access PM on behalf of the application. Because of PM access decoupling, Odinfs automatically parallelizes the access to PM across NUMA nodes in a controlled and localized manner. Our evaluation shows that Odinfs outperforms existing PM file systems up to 32.7× on real-world workloads.</p>
   <pre>@inproceedings{zhou:odinfs,
   title        = {{Odinfs: Scaling PM performance with Opportunistic Delegation}},
   author       = {Diyu Zhou and Yuchen Qian and Vishal Gupta and Zhifei Yang and Changwoo Min and Sanidhya Kashyap},
