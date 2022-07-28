@@ -12,13 +12,13 @@
 <link rel="canonical" href="../pages/projects.html">
 
         <meta name="author" content="RS3Lab" />
-        <meta name="description" content="Below are some projects that our group is actively working on. If you are a Ph.D. student, email Sanidhya. Transient Operating System Design The main goal of this big project is to dynamically modify various subsystems to cater to heterogeneous hardware and varying application requirements. Most of the prior …" />
+        <meta name="description" content="Below are some projects that our group is actively working on. If you are a Ph.D. student, email Sanidhya. Our group also has some specific semester and optional projects for students at EPFL. Transient Operating System Design The main goal of this big project is to dynamically modify various …" />
 
     <meta property="og:site_name" content="RS3Lab" />
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="Projects"/>
     <meta property="og:url" content="../pages/projects.html"/>
-    <meta property="og:description" content="Below are some projects that our group is actively working on. If you are a Ph.D. student, email Sanidhya. Transient Operating System Design The main goal of this big project is to dynamically modify various subsystems to cater to heterogeneous hardware and varying application requirements. Most of the prior …" />
+    <meta property="og:description" content="Below are some projects that our group is actively working on. If you are a Ph.D. student, email Sanidhya. Our group also has some specific semester and optional projects for students at EPFL. Transient Operating System Design The main goal of this big project is to dynamically modify various …" />
 
 
 
@@ -28,7 +28,7 @@
 
     <link href="../theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
-        <link href="../assets/css/rs3lab.css?1658995520.871876" rel="stylesheet">
+        <link href="../assets/css/rs3lab.css?1658999847.7971642" rel="stylesheet">
 
 
 
@@ -80,7 +80,10 @@ RS3Lab            </a>
         <h1 class="entry-title">Projects</h1>
         
         <div class="entry-content">
-            <p>Below are some projects that our group is actively working on. If you are a <strong>Ph.D.</strong> student, email <a class="reference external" href="mailto:sanidhya.kashyap&#64;epfl.ch">Sanidhya</a>.</p>
+            <p>Below are some projects that our group is actively working on. If you are a
+<strong>Ph.D.</strong> student, email <a class="reference external" href="mailto:sanidhya.kashyap&#64;epfl.ch">Sanidhya</a>.</p>
+<p>Our group also has some specific semester and optional projects for students at
+EPFL.</p>
 <div class="section" id="transient-operating-system-design">
 <h2>Transient Operating System Design</h2>
 <p>The main goal of this big project is to dynamically modify various subsystems to
@@ -131,6 +134,129 @@ reason about their practicality. Some of the ongoing projects are as follows:</p
 machines.</li>
 <li>Reasoning about various bugs in a concurrent environment.</li>
 </ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="projects-for-bachelors-and-masters-students">
+<h2>Projects for Bachelors and Masters students</h2>
+<div class="section" id="concurrency-scalable-range-locks">
+<h3>[Concurrency] Scalable Range Locks</h3>
+<p>Range locks are one of the concurrency primitives that enable
+disjoint data access parallelism within a range. Because of this,
+they are now becoming a part of file system and memory management operations
+in the Linux kernel. The aim of the project is to design and implement a new
+primitive that provides the best of both worlds: low memory footprint and high
+throughput in both low and high contention.</p>
+<p>In this project, you will:</p>
+<ul class="simple">
+<li>Profile the filesystem and memory-management subsystem to understand the
+bottlenecks in current range lock implementation.</li>
+<li>Implement a range lock and compare the performance with other state-of-the-art
+range lock designs.</li>
+</ul>
+<p>You will learn about:</p>
+<ul class="simple">
+<li>Synchronization primitives.</li>
+<li>Benchmarking using software and hardware performance counter.</li>
+<li>File system and memory management subsystem.</li>
+</ul>
+</div>
+<div class="section" id="robust-systems-developing-benchmarks-for-metastable-failures">
+<h3>[Robust Systems] Developing benchmarks for metastable failures</h3>
+<p>Metastable failures is a class of (mostly) distributed systems bugs that
+manifest as a consequence of the interaction of various microservices in an
+application: when in fact the individual components by themselves do not
+exhibit these failures. This class failures are mostly applicable to datacenter
+scale applications.  One key aspect of this class of failures is that systems
+that enter a metastable failure state, usually cannot recover from it without
+human intervention/system reboots. Moreover, they can be cascading in nature
+causing outages for hours. In this project, we would like to develop benchmarks
+to study these bugs better and come up with resolution mechanisms.</p>
+<p>In this project, you will:</p>
+<ul class="simple">
+<li>Study open reports of major outages at companies running applications at
+datacenter scale.</li>
+<li>Write a set benchmarks implemented as microservices with configurations
+that can trigger metastable failure states.</li>
+</ul>
+<p>You will learn:</p>
+<ul class="simple">
+<li>Distributed systems.</li>
+<li>Dockers, k8s, microservice architecture, cloud application design.</li>
+<li>Bug detection, testing and debugging.</li>
+</ul>
+</div>
+<div class="section" id="robust-systems-checking-semantic-correctness-of-concurrent-file-system-operations">
+<h3>[Robust Systems] Checking semantic correctness of concurrent file system operations</h3>
+<p>Semantic incorrectness or semantic bugs (e.g, specification violation, logical
+bugs, and crash consistency bugs) of file systems can lead to data loss, file
+system unavailability, etc. Thus it's critical to discover and fix them. There
+are existing works related to semantic correctness checking. For example,
+SibylFS checks whether the results of a sequence of file operations are
+allowed by a mathematically rigorous model, which expresses the POSIX
+specification. And Hydra emulates the allowed file system states when facing a
+crash to discover crash consistency bugs. However, they only focus on the
+single execution, which leaves the concurrent executions unexplored.</p>
+<p>In this project, you will:</p>
+<ul class="simple">
+<li>Collect existing semantic bugs caused by concurrent file operations.</li>
+<li>Analyze the difference of semantic bugs between single and concurrent
+execution scenarios.</li>
+<li>Propose and implement a method to emulate file system states in the
+concurrent execution scenario.</li>
+<li>Compare the real running results with emulated results to decide the
+correctness.</li>
+</ul>
+<p>You will learn:</p>
+<ul class="simple">
+<li>Semantic bug analysis and detection.</li>
+<li>Distributed file systems.</li>
+<li>Fuzzing.</li>
+</ul>
+</div>
+<div class="section" id="storage-understanding-new-storage-devices">
+<h3>[Storage] Understanding new storage devices</h3>
+<p>Storage devices comes in various forms and factors. For instance, today's
+machines are already equipped with flash based storage devices, such as SSDs.
+However, there are several performance issues with the stack supporting current
+SSDs, mostly because of how SSDs have been designed. To avoid some set of
+problems, there are new devices coming in the market, such as Zoned Namespace
+SSDs (ZNS), SmartSSDs, and persistent memory (PM). Hence, this projects aims to
+understand the performance of storage stacks for these new storage media.</p>
+<p>In this project, you will:</p>
+<ul class="simple">
+<li>Evaluate the performance characteristics of any of these devices.</li>
+<li>Design a set of benchmarks that specifically target such devices for various
+scenarios.</li>
+<li>Contrast their performance with SSDs.</li>
+</ul>
+<p>You will learn:</p>
+<ul class="simple">
+<li>File system design.</li>
+<li>Scalability of storage stacks.</li>
+<li>Behavior of existing storage hardware.</li>
+</ul>
+</div>
+<div class="section" id="storage-efficient-memory-copy-for-pm-file-systems">
+<h3>[Storage] Efficient memory copy for PM file systems</h3>
+<p>Persistent memory (PM) is a high-performant storage device that is faster
+than other storage media. The project will investigate a simple yet very
+important memory operation: memory copying. In particular, how developers
+can use various advanced hardware features, such as SIMD instruction sets and
+I/OAT DMA for copying data.</p>
+<p>In this project, you will:</p>
+<ul class="simple">
+<li>Study the performance characteristics of PM.</li>
+<li>Develop mechanisms based on existing hardware features to perform efficient
+memory copying with PM.</li>
+</ul>
+<p>You will learn:</p>
+<ul class="simple">
+<li>Advanced hardware features for memory copy.</li>
+</ul>
+<hr class="docutils" />
+<p>In case you have projects that are not mentioned below but fall under the
+purview of our group's interest, feel free to contact us.</p>
+</div>
 </div>
 
         </div>
