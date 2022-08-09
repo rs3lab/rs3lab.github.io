@@ -28,7 +28,7 @@
 
     <link href="../theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
-        <link href="../assets/css/rs3lab.css?1658999847.7971642" rel="stylesheet">
+        <link href="../assets/css/rs3lab.css?1660054108.7530475" rel="stylesheet">
 
 
 
@@ -252,6 +252,36 @@ memory copying with PM.</li>
 <p>You will learn:</p>
 <ul class="simple">
 <li>Advanced hardware features for memory copy.</li>
+</ul>
+</div>
+<div class="section" id="storage-nvme-dummy-device-backed-by-memory-for-linux-nvme-driver">
+<h3>[Storage] NVMe dummy device backed by memory for Linux NVMe driver</h3>
+<p>One branch of our research is focused on improving performance of the Linux
+kernel storage stack. However, this overhead is not significant with
+traditional SSDs (NAND-based), because their latency is too high. Hence we must
+use very expensive and now discontinued Intel Optane DC SSDs (3D XPoint-based)
+to actually benchmark our improvements.</p>
+<p>It means, that we cannot realistically measure the bottlenecks in the storage
+stack until we have a new, faster storage devices. But researchers don't want
+to wait for new hardware to appear. We want to have fast devices even before
+they appear to be able to modify the software stack properly.</p>
+<p>NVMe dummy device backed by main memory would allow us to have a virtual SSD
+with extremely low latency and extremely high throughput. With that device, we
+can build storage stack for the future.</p>
+<p>In this project, you will:</p>
+<ul class="simple">
+<li>Study Linux kernel driver for NVMe devices.</li>
+<li>Implement a virtual NVMe device backed by main memory.</li>
+<li>Optimize it for the lowest possible latency/highest possible throughput.</li>
+<li>Benchmark its performance.</li>
+</ul>
+<p>You will learn:</p>
+<ul class="simple">
+<li>How to read a codebase of Linux kernel.</li>
+<li>How to work with high-quality real-life code.</li>
+<li>Necessary tools and practices for Linux kernel development.</li>
+<li>How to write high-quality and high-performance code.</li>
+<li>How to contribute to Linux kernel.</li>
 </ul>
 <hr class="docutils" />
 <p>In case you have projects that are not mentioned below but fall under the
