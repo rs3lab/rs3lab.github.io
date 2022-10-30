@@ -28,7 +28,7 @@
 
     <link href="../theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
-        <link href="../assets/css/rs3lab.css?1667107580.5748188" rel="stylesheet">
+        <link href="../assets/css/rs3lab.css?1667111095.976382" rel="stylesheet">
 
 
 
@@ -99,6 +99,7 @@ granularity.</li>
 properties, such as mutual exclusion, starvation avoidance, and fairness.</li>
 <li>A lightweight hypervisor that caters to various forms of virtualization:
 bare-metal to serverless.</li>
+<li>Re-architecting OS for microsecond IO.</li>
 </ol>
 <p>We will further extend this project to reason about data structures' concurrency
 and consistency.</p>
@@ -114,10 +115,11 @@ projects are as follows:</p>
 <ol class="arabic simple">
 <li>Designing new techniques to saturate and scale operations
 for various storage media.</li>
-<li>Understanding the implication of persistent memory (PM) over traditional
-storage media, such as SSDs.</li>
+<li>Understanding the implication of storage class memory over
+traditional storage media, such as SSDs.</li>
+<li>Designing new storage engines for upcoming storage media,
+such as ZNS SSDs.</li>
 <li>Offloading file system stack to computational SSDs.</li>
-<li>Re-architecting OS for microsecond IO.</li>
 </ol>
 </div>
 <div class="section" id="concurrency-primitives-and-frameworks">
@@ -129,9 +131,10 @@ hardware (such as BIG/Little architectures and high bandwidth memory) and
 rack-scale systems. We are revisiting some of the primitives and trying to
 reason about their practicality. Some of the ongoing projects are as follows:</p>
 <ol class="arabic simple">
-<li>Making advanced synchronization primitives (combining/delegation) a reality.</li>
 <li>Revisiting the design of locking primitives for very large multicore
 machines.</li>
+<li>Redesigning concurrency primitives for microsecond scale
+application in a rack scale environment.</li>
 <li>Reasoning about various bugs in a concurrent environment.</li>
 </ol>
 </div>
@@ -158,6 +161,29 @@ range lock designs.</li>
 <li>Synchronization primitives.</li>
 <li>Benchmarking using software and hardware performance counter.</li>
 <li>File system and memory management subsystem.</li>
+</ul>
+</div>
+<div class="section" id="concurrency-verified-concurrent-algorithms">
+<h3>[Concurrency] Verified Concurrent Algorithms</h3>
+<p>Concurrent algorithms are the basic building of today's infrastructure. However,
+verifying their correctness is quite challenging. For example, the spinlock
+code in the Linux kernel had a bug for several years. In this project, we aim to
+verify the correctness of a set of concurrent algorithms using existing program
+verifiers, such as dafny or coq. By doing this, we can not only enable
+designing code that is not only scalable but also correct-by-construction from
+day one.</p>
+<p>In this project, you will:</p>
+<ul class="simple">
+<li>Take an existing concurrent algorithm, specifically synchronization primitive.</li>
+<li>Understand and come up with safety properties.</li>
+<li>Implement the code in any verification language of your choice.</li>
+</ul>
+<p>You will learn about:</p>
+<ul class="simple">
+<li>Concurrent algorithms.</li>
+<li>Concurrent program verification.</li>
+<li>Memory models.</li>
+<li>Hardware behavior.</li>
 </ul>
 </div>
 <div class="section" id="robust-systems-developing-benchmarks-for-metastable-failures">
@@ -236,24 +262,6 @@ scenarios.</li>
 <li>Behavior of existing storage hardware.</li>
 </ul>
 </div>
-<div class="section" id="storage-efficient-memory-copy-for-pm-file-systems">
-<h3>[Storage] Efficient memory copy for PM file systems</h3>
-<p>Persistent memory (PM) is a high-performant storage device that is faster
-than other storage media. The project will investigate a simple yet very
-important memory operation: memory copying. In particular, how developers
-can use various advanced hardware features, such as SIMD instruction sets and
-I/OAT DMA for copying data.</p>
-<p>In this project, you will:</p>
-<ul class="simple">
-<li>Study the performance characteristics of PM.</li>
-<li>Develop mechanisms based on existing hardware features to perform efficient
-memory copying with PM.</li>
-</ul>
-<p>You will learn:</p>
-<ul class="simple">
-<li>Advanced hardware features for memory copy.</li>
-</ul>
-</div>
 <div class="section" id="storage-nvme-dummy-device-backed-by-memory-for-linux-nvme-driver">
 <h3>[Storage] NVMe dummy device backed by memory for Linux NVMe driver</h3>
 <p>One branch of our research is focused on improving performance of the Linux
@@ -284,7 +292,7 @@ can build storage stack for the future.</p>
 <li>How to contribute to Linux kernel.</li>
 </ul>
 <hr class="docutils" />
-<p>In case you have projects that are not mentioned below but fall under the
+<p>In case you have projects that are not mentioned above but fall under the
 purview of our group's interest, feel free to contact us.</p>
 </div>
 </div>
