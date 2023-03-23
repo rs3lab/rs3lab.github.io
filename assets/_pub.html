@@ -12,20 +12,64 @@
   <div class="col-sm-2" id="filter"><input class="filter-state" style="display:none" /></div>
   <div class="col-sm-10">
  <h2>2023</h2>
+<div id="gupta:tclock" class="pub-id"></div>
+<div class="pub" data-type="Conference paper" data-topic="Concurrency" data-key="gupta:tclock">
+ <div class="pub-meta">
+  <div class="pub-links">
+  </div>
+  <span class="pub-title">Ship your Critical Section, Not Your Data: Enabling Transparent Delegation with TCLocks (to appear)</span>
+  <a href="#gupta:tclock" class="pub-expand"><i class="icon-expand"></i></a>
+  <a href="#/" class="pub-collapse"><i class="icon-collapse"></i></a>
+  <span class="pub-author">Vishal Gupta, Kumar Kartikeya Dwivedi, Yugesh Kothari, Yueyang Pan, and Sanidhya Kashyap.</span>
+  <abbr class="pub-in" title="Proceedings of the 17th USENIX Symposium on Operating Systems Design and Implementation (OSDI), Boston, MA, July 2023.">OSDI 2023.</abbr>
+ </div>
+ <div class="pub-details">
+  <pre>@inproceedings{gupta:tclock,
+  title        = {{Ship your Critical Section, Not Your Data: Enabling Transparent Delegation with TCLocks (to appear)}},
+  author       = {Vishal Gupta and Kumar Kartikeya Dwivedi and Yugesh Kothari and Yueyang Pan and Sanidhya Kashyap},
+  booktitle    = {Proceedings of the 17th USENIX Symposium on Operating Systems Design and Implementation (OSDI)},
+  month        = jul,
+  year         = 2023,
+  address      = {Boston, MA},
+}</pre>
+ </div>
+</div>
 <div id="krishnan:tenet" class="pub-id"></div>
 <div class="pub" data-type="Conference paper" data-topic="System" data-key="krishnan:tenet">
  <div class="pub-meta">
   <div class="pub-links">
+   <a title="Slides" href="../assets/papers/2023/krishnan:tenet-slides.pdf"><i class="icon-slides"></i></a>
+   <a title="Paper" href="../assets/papers/2023/krishnan:tenet.pdf"><i class="icon-file"></i></a>
   </div>
-  <span class="pub-title">TENET: Memory Safe and Fault tolerant Persistent Transactional Memory (to appear)</span>
+  <span class="pub-title">TENET: Memory Safe and Fault tolerant Persistent Transactional Memory</span>
   <a href="#krishnan:tenet" class="pub-expand"><i class="icon-expand"></i></a>
   <a href="#/" class="pub-collapse"><i class="icon-collapse"></i></a>
   <span class="pub-author">R. Madhava Krishnan, Diyu Zhou, Wook-Hee Kim, Sudarsun Kannan, Sanidhya Kashyap, and Changwoo Min.</span>
   <abbr class="pub-in" title="21st USENIX Conference on File and Storage Technologies (FAST) (FAST 23), Santa Clara, CA, February 2023.">FAST  2023.</abbr>
  </div>
  <div class="pub-details">
+<p>Byte-addressable non-volatile memory (NVM) allows programs
+to directly access storage using memory interface without
+going through the expensive conventional storage stack.
+However, direct access to NVM makes the NVM data vulnerable
+to software bugs and hardware errors. This issue is critical
+because, unlike DRAM, corrupted data can persist forever,
+even after the system restart. Albeit the plethora of research on
+NVM programs and systems, there is little focus on protecting
+NVM data from software bugs and hardware errors.</p>
+<p>In this paper, we propose TENET, a new NVM programming
+framework, which guarantees memory safety and fault
+tolerance to protect NVM data against software bugs and hardware
+errors. TENET provides the popular persistent transactional
+memory (PTM) programming model. TENET leverages
+the concurrency guarantees (i.e., ACID properties) of PTM
+to provide performant and cost-efficient memory safety and
+fault tolerance. Our evaluations show that T ENET offers an
+enhanced protection scope at a modest performance overhead
+and storage cost as compared to other PTMs with partial or
+no memory safety and fault tolerance support.</p>
   <pre>@inproceedings{krishnan:tenet,
-  title        = {{TENET: Memory Safe and Fault tolerant Persistent Transactional Memory (to appear)}},
+  title        = {{TENET: Memory Safe and Fault tolerant Persistent Transactional Memory}},
   author       = {R. Madhava Krishnan and Diyu Zhou and Wook-Hee Kim and Sudarsun Kannan and Sanidhya Kashyap and Changwoo Min},
   booktitle    = {21st USENIX Conference on File and Storage Technologies (FAST) (FAST 23)},
   month        = feb,
@@ -66,6 +110,7 @@
  <div class="pub-meta">
   <div class="pub-links">
    <a title="Homepage" href="https://rs3lab.github.io/SynCord/"><i class="icon-www"></i></a>
+   <a title="Slides" href="../assets/papers/2022/park:syncord-slides.pdf"><i class="icon-slides"></i></a>
    <a title="Paper" href="../assets/papers/2022/park:syncord.pdf"><i class="icon-file"></i></a>
   </div>
   <span class="pub-title">Application-Informed Kernel Synchronization Primitives</span>
@@ -232,6 +277,25 @@ in performance and 20x in 99.99 percentile tail latency.</p>
   <abbr class="pub-in" title="Proceedings of the 15th USENIX Symposium on Operating Systems Design and Implementation (OSDI), Virtual, October 2021.">OSDI 2021.</abbr>
  </div>
  <div class="pub-details">
+<p>Writing a correct operating system kernel is notoriously hard. Kernel code
+requires manual memory management and type-unsafe code and must efficiently
+handle complex, asynchronous events. In addition, increasing CPU core counts
+further complicate kernel development. Typically, monolithic kernels share
+state across cores and rely on one-off synchronization patterns that are
+specialized for each kernel structure or subsystem. Hence, kernel developers
+are constantly refining synchronization within OS kernels to improve
+scalability at the risk of introducing subtle bugs.</p>
+<p>We present NrOS, a new OS kernel with a safer approach to synchronization that
+runs many POSIX programs. NrOS is primarily constructed as a simple, sequential
+kernel with no concurrency, making it easier to develop and reason about its
+correctness. This kernel is scaled across NUMA nodes using node replication, a
+scheme inspired by state machine replication in distributed systems. NrOS
+replicates kernel state on each NUMA node and uses operation logs to maintain
+strong consistency between replicas. Cores can safely and concurrently read
+from their local kernel replica, eliminating remote NUMA accesses.</p>
+<p>Our evaluation shows that NrOS scales to 96 cores with performance that nearly
+always dominates Linux at scale, in some cases by orders of magnitude, while
+retaining much of the simplicity of a sequential kernel.</p>
   <pre>@inproceedings{bhardwaj:nros,
   title        = {{NrOs: Effective Replication and Sharing in an Operating System}},
   author       = {Ankit Bhardwaj and Chinmay Kulkarni and Reto Achermann and Irina Calciu and Sanidhya Kashyap and Ryan Stutsman and Amy Tai and Gerd
