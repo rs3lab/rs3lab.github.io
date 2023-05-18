@@ -28,7 +28,7 @@
 
     <link href="../theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
-        <link href="../assets/css/rs3lab.css?1683409673.4181268" rel="stylesheet">
+        <link href="../assets/css/rs3lab.css?1684450721.4206095" rel="stylesheet">
 
 
 
@@ -141,26 +141,53 @@ application in a rack scale environment.</li>
 <hr class="docutils" />
 <div class="section" id="projects-for-bachelors-and-masters-students">
 <h2>Projects for Bachelors and Masters students</h2>
-<div class="section" id="concurrency-scalable-range-locks">
-<h3>[Concurrency] Scalable Range Locks</h3>
-<p>Range locks are one of the concurrency primitives that enable
-disjoint data access parallelism within a range. Because of this,
-they are now becoming a part of file system and memory management operations
-in the Linux kernel. The aim of the project is to design and implement a new
-primitive that provides the best of both worlds: low memory footprint and high
-throughput in both low and high contention.</p>
+<div class="section" id="concurrency-continuous-lock-switching-in-userspace">
+<h3>[Concurrency] Continuous lock switching in Userspace</h3>
+<p>Applications are increasingly becoming more complex and are being deployed on
+heterogeneous hardware (NUMA, AMP etc.). However, in current systems, the lock
+mechanism remains static. SynCord is the first framework to implement dynamic
+lock switching for the kernel. This work proposes to extend the framework for
+userspace applications. The end goal is to create a holistic framework to
+change any locks across userspace and kernel-space.</p>
 <p>In this project, you will:</p>
 <ul class="simple">
-<li>Profile the filesystem and memory-management subsystem to understand the
-bottlenecks in current range lock implementation.</li>
-<li>Implement a range lock and compare the performance with other state-of-the-art
-range lock designs.</li>
+<li>Implement dynamic lock switching for userspace applications.</li>
+<li>Implement a mechanism to enforce lock policies across the stack.</li>
+</ul>
+<p>Prerequisite:</p>
+<ul class="simple">
+<li>Comfortable in exploring large codebases like the Linux kernel.</li>
+<li>Have a basic understanding of how operating systems work.</li>
 </ul>
 <p>You will learn about:</p>
 <ul class="simple">
 <li>Synchronization primitives.</li>
 <li>Benchmarking using software and hardware performance counter.</li>
-<li>File system and memory management subsystem.</li>
+</ul>
+</div>
+<div class="section" id="concurrency-choosing-the-best-locking-primitive">
+<h3>[Concurrency] Choosing the best locking primitive</h3>
+<p>Applications are increasingly becoming more complex and are being deployed on
+heterogeneous hardware (NUMA, AMP etc.). A single lock design is not optimal in
+all cases. A wide range of lock algorithms have been proposed. This work
+proposes to analyze a set of algorithms and figure out which algorithms work
+best for which scenario.</p>
+<p>In this project, you will:</p>
+<ul class="simple">
+<li>Understand the latency of locking across various architectures.</li>
+<li>Analyze a set of lock algorithms across different workloads and different
+hardware (Intel / AMD / ARM / NUMA / AMP).</li>
+<li>Create a set of static or dynamic rules to figure out which algorithm will be
+optimal for a given workload on a given hardware.</li>
+</ul>
+<p>Prerequisite:</p>
+<ul class="simple">
+<li>Comfortable in exploring performance anomalies across different
+hardware/software.</li>
+</ul>
+<p>You will learn about:</p>
+<ul class="simple">
+<li>Synchronization primitives.</li>
 </ul>
 </div>
 <div class="section" id="concurrency-verified-concurrent-algorithms">
@@ -186,57 +213,98 @@ day one.</p>
 <li>Hardware behavior.</li>
 </ul>
 </div>
-<div class="section" id="robust-systems-developing-benchmarks-for-metastable-failures">
-<h3>[Robust Systems] Developing benchmarks for metastable failures</h3>
-<p>Metastable failures is a class of (mostly) distributed systems bugs that
-manifest as a consequence of the interaction of various microservices in an
-application: when in fact the individual components by themselves do not
-exhibit these failures. This class failures are mostly applicable to datacenter
-scale applications.  One key aspect of this class of failures is that systems
-that enter a metastable failure state, usually cannot recover from it without
-human intervention/system reboots. Moreover, they can be cascading in nature
-causing outages for hours. In this project, we would like to develop benchmarks
-to study these bugs better and come up with resolution mechanisms.</p>
+<div class="section" id="concurrency-concurrency-control-protocols-in-rust">
+<h3>[Concurrency] Concurrency Control protocols in Rust</h3>
+<p>Concurrency Control protocols are the protocols which permit the end users to
+access the database in a concurrent and multi-threaded way with the illusion of
+executing their requests on a dedicated systems. Different concurrency control
+protocols have different performance and scalability under different workloads.
+The project tries to explore how the Rust language can benefit the
+implementation of these protocols with its stronger memory safety guarantee and
+whether or not the performance would alter due to the language features.</p>
 <p>In this project, you will:</p>
 <ul class="simple">
-<li>Study open reports of major outages at companies running applications at
-datacenter scale.</li>
-<li>Write a set benchmarks implemented as microservices with configurations
-that can trigger metastable failure states.</li>
+<li>Implement different concurrency control protocols (2PL, Basic Timestamp, OCC,
+MVCC) in Rust.</li>
+<li>Measure the performance of these protocols under different workloads (YCSB,
+TPCC).</li>
 </ul>
-<p>You will learn:</p>
+<p>Prerequisite:</p>
 <ul class="simple">
-<li>Distributed systems.</li>
-<li>Dockers, k8s, microservice architecture, cloud application design.</li>
-<li>Bug detection, testing and debugging.</li>
+<li>Proficiency in Rust</li>
+<li>A basic understanding of database and concurrency control protocols.</li>
+</ul>
+<p>You will learn about:</p>
+<ul class="simple">
+<li>Various concurrency protocols.</li>
+<li>Understanding various isolation levels used in databases.</li>
 </ul>
 </div>
-<div class="section" id="robust-systems-checking-semantic-correctness-of-concurrent-file-system-operations">
-<h3>[Robust Systems] Checking semantic correctness of concurrent file system operations</h3>
-<p>Semantic incorrectness or semantic bugs (e.g, specification violation, logical
-bugs, and crash consistency bugs) of file systems can lead to data loss, file
-system unavailability, etc. Thus it's critical to discover and fix them. There
-are existing works related to semantic correctness checking. For example,
-SibylFS checks whether the results of a sequence of file operations are
-allowed by a mathematically rigorous model, which expresses the POSIX
-specification. And Hydra emulates the allowed file system states when facing a
-crash to discover crash consistency bugs. However, they only focus on the
-single execution, which leaves the concurrent executions unexplored.</p>
+<div class="section" id="scalable-os-admission-control-for-system-calls">
+<h3>[Scalable OS] Admission control for system calls</h3>
+<p>Multi-threaded applications increasingly use system calls to access shared
+resources (Network, IO, CPU, Memory). In current design, system calls done in
+parallel are admitted and it contends for resources. Increasing this
+parallelism of system calls however results in diminishing returns. This
+project aims to analyze this threshold and implement an admission control
+mechanism for system calls.</p>
 <p>In this project, you will:</p>
 <ul class="simple">
-<li>Collect existing semantic bugs caused by concurrent file operations.</li>
-<li>Analyze the difference of semantic bugs between single and concurrent
-execution scenarios.</li>
-<li>Propose and implement a method to emulate file system states in the
-concurrent execution scenario.</li>
-<li>Compare the real running results with emulated results to decide the
-correctness.</li>
+<li>Figure out thresholds for a set of system calls after which it results in
+diminishing returns.</li>
+<li>Implement an admission control mechanism and use it to implement the
+admission control policy based on threshold.</li>
+</ul>
+<p>Prerequisite:</p>
+<ul class="simple">
+<li>Comfortable in exploring large code-base like the Linux kernel.</li>
+<li>Have a basic understanding of how operating systems work.</li>
+</ul>
+</div>
+<div class="section" id="scalable-os-modifying-linux-kernel-with-ebpf-based-policies">
+<h3>[Scalable OS] Modifying Linux kernel with eBPF based policies</h3>
+<p>Applications often suffer from the performance regression due to the general
+interface provided by Linux. To address this issue, currently Linux provides
+eBPF to dynamically modify Linux to improve application performance.
+As a part of this project, you will explore how to modify various sub-systems
+of the Linux kernel, such as file systems, memory management, network stack,
+userspace probes to improve the performance of applications.</p>
+<p>In this project, you will:</p>
+<ul class="simple">
+<li>Understand applications requirements from the perspective of Linux.</li>
+<li>Implement policies at various subsystems to improve application performance.</li>
+</ul>
+<p>Prerequisite:</p>
+<ul class="simple">
+<li>Comfortable in exploring large code-base like the Linux kernel.</li>
+<li>Have a basic understanding of how operating systems work.</li>
+</ul>
+</div>
+<div class="section" id="robust-systems-collecting-and-analyzing-semantic-bugs-in-distributed-applications">
+<h3>[Robust Systems] Collecting and analyzing semantic bugs in distributed applications</h3>
+<p>Distributed applications, such as Zookeeper, HDFS and redis, are prone to
+semantic bugs due to the complex programming logics. However, detecting these
+bugs can be challenging as they occur silently without causing any process
+crashes. To address this, one approach is to manually review commits/patches or
+bug reports to identify the patterns of specific semantic bug types in a group
+of applications. This information can then be used to design checkers that can
+detect these bugs.</p>
+<p>In this project, you will:</p>
+<ul class="simple">
+<li>Collect semantic bugs of the popular distributed applications.</li>
+<li>Analyze their root causes and patterns.</li>
+<li>If time permits, develop the corresponding checkers.</li>
+</ul>
+<p>Prerequisite:</p>
+<ul class="simple">
+<li>Bug analysis (static and dynamic analysis)</li>
+<li>Basics about distributed applications</li>
 </ul>
 <p>You will learn:</p>
 <ul class="simple">
 <li>Semantic bug analysis and detection.</li>
-<li>Distributed file systems.</li>
-<li>Fuzzing.</li>
+<li>Distributed application programming.</li>
+<li>Root-cause analysis.</li>
 </ul>
 </div>
 <div class="section" id="storage-understanding-new-storage-devices">
@@ -260,36 +328,6 @@ scenarios.</li>
 <li>File system design.</li>
 <li>Scalability of storage stacks.</li>
 <li>Behavior of existing storage hardware.</li>
-</ul>
-</div>
-<div class="section" id="storage-nvme-dummy-device-backed-by-memory-for-linux-nvme-driver">
-<h3>[Storage] NVMe dummy device backed by memory for Linux NVMe driver</h3>
-<p>One branch of our research is focused on improving performance of the Linux
-kernel storage stack. However, this overhead is not significant with
-traditional SSDs (NAND-based), because their latency is too high. Hence we must
-use very expensive and now discontinued Intel Optane DC SSDs (3D XPoint-based)
-to actually benchmark our improvements.</p>
-<p>It means, that we cannot realistically measure the bottlenecks in the storage
-stack until we have a new, faster storage devices. But researchers don't want
-to wait for new hardware to appear. We want to have fast devices even before
-they appear to be able to modify the software stack properly.</p>
-<p>NVMe dummy device backed by main memory would allow us to have a virtual SSD
-with extremely low latency and extremely high throughput. With that device, we
-can build storage stack for the future.</p>
-<p>In this project, you will:</p>
-<ul class="simple">
-<li>Study Linux kernel driver for NVMe devices.</li>
-<li>Implement a virtual NVMe device backed by main memory.</li>
-<li>Optimize it for the lowest possible latency/highest possible throughput.</li>
-<li>Benchmark its performance.</li>
-</ul>
-<p>You will learn:</p>
-<ul class="simple">
-<li>How to read a codebase of Linux kernel.</li>
-<li>How to work with high-quality real-life code.</li>
-<li>Necessary tools and practices for Linux kernel development.</li>
-<li>How to write high-quality and high-performance code.</li>
-<li>How to contribute to Linux kernel.</li>
 </ul>
 <hr class="docutils" />
 <p>In case you have projects that are not mentioned above but fall under the
