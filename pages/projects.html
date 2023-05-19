@@ -28,7 +28,7 @@
 
     <link href="../theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
-        <link href="../assets/css/rs3lab.css?1684450721.4206095" rel="stylesheet">
+        <link href="../assets/css/rs3lab.css?1684518728.3172593" rel="stylesheet">
 
 
 
@@ -141,8 +141,8 @@ application in a rack scale environment.</li>
 <hr class="docutils" />
 <div class="section" id="projects-for-bachelors-and-masters-students">
 <h2>Projects for Bachelors and Masters students</h2>
-<div class="section" id="concurrency-continuous-lock-switching-in-userspace">
-<h3>[Concurrency] Continuous lock switching in Userspace</h3>
+<div class="section" id="scalable-os-continuous-lock-switching-across-the-stack">
+<h3>[Scalable OS] Continuous lock switching across the stack</h3>
 <p>Applications are increasingly becoming more complex and are being deployed on
 heterogeneous hardware (NUMA, AMP etc.). However, in current systems, the lock
 mechanism remains static. SynCord is the first framework to implement dynamic
@@ -165,8 +165,8 @@ change any locks across userspace and kernel-space.</p>
 <li>Benchmarking using software and hardware performance counter.</li>
 </ul>
 </div>
-<div class="section" id="concurrency-choosing-the-best-locking-primitive">
-<h3>[Concurrency] Choosing the best locking primitive</h3>
+<div class="section" id="scalable-os-choosing-the-best-locking-primitive">
+<h3>[Scalable OS] Choosing the best locking primitive</h3>
 <p>Applications are increasingly becoming more complex and are being deployed on
 heterogeneous hardware (NUMA, AMP etc.). A single lock design is not optimal in
 all cases. A wide range of lock algorithms have been proposed. This work
@@ -188,6 +188,46 @@ hardware/software.</li>
 <p>You will learn about:</p>
 <ul class="simple">
 <li>Synchronization primitives.</li>
+</ul>
+</div>
+<div class="section" id="scalable-os-admission-control-for-system-calls">
+<h3>[Scalable OS] Admission control for system calls</h3>
+<p>Multi-threaded applications increasingly use system calls to access shared
+resources (Network, IO, CPU, Memory). In current design, system calls done in
+parallel are admitted and it contends for resources. Increasing this
+parallelism of system calls however results in diminishing returns. This
+project aims to analyze this threshold and implement an admission control
+mechanism for system calls.</p>
+<p>In this project, you will:</p>
+<ul class="simple">
+<li>Figure out thresholds for a set of system calls after which it results in
+diminishing returns.</li>
+<li>Implement an admission control mechanism and use it to implement the
+admission control policy based on threshold.</li>
+</ul>
+<p>Prerequisite:</p>
+<ul class="simple">
+<li>Comfortable in exploring large code-base like the Linux kernel.</li>
+<li>Have a basic understanding of how operating systems work.</li>
+</ul>
+</div>
+<div class="section" id="scalable-os-modifying-linux-kernel-with-ebpf-based-policies">
+<h3>[Scalable OS] Modifying Linux kernel with eBPF based policies</h3>
+<p>Applications often suffer from the performance regression due to the general
+interface provided by Linux. To address this issue, currently Linux provides
+eBPF to dynamically modify Linux to improve application performance.
+As a part of this project, you will explore how to modify various sub-systems
+of the Linux kernel, such as file systems, memory management, network stack,
+userspace probes to improve the performance of applications.</p>
+<p>In this project, you will:</p>
+<ul class="simple">
+<li>Understand applications requirements from the perspective of Linux.</li>
+<li>Implement policies at various subsystems to improve application performance.</li>
+</ul>
+<p>Prerequisite:</p>
+<ul class="simple">
+<li>Comfortable in exploring large code-base like the Linux kernel.</li>
+<li>Have a basic understanding of how operating systems work.</li>
 </ul>
 </div>
 <div class="section" id="concurrency-verified-concurrent-algorithms">
@@ -238,46 +278,6 @@ TPCC).</li>
 <ul class="simple">
 <li>Various concurrency protocols.</li>
 <li>Understanding various isolation levels used in databases.</li>
-</ul>
-</div>
-<div class="section" id="scalable-os-admission-control-for-system-calls">
-<h3>[Scalable OS] Admission control for system calls</h3>
-<p>Multi-threaded applications increasingly use system calls to access shared
-resources (Network, IO, CPU, Memory). In current design, system calls done in
-parallel are admitted and it contends for resources. Increasing this
-parallelism of system calls however results in diminishing returns. This
-project aims to analyze this threshold and implement an admission control
-mechanism for system calls.</p>
-<p>In this project, you will:</p>
-<ul class="simple">
-<li>Figure out thresholds for a set of system calls after which it results in
-diminishing returns.</li>
-<li>Implement an admission control mechanism and use it to implement the
-admission control policy based on threshold.</li>
-</ul>
-<p>Prerequisite:</p>
-<ul class="simple">
-<li>Comfortable in exploring large code-base like the Linux kernel.</li>
-<li>Have a basic understanding of how operating systems work.</li>
-</ul>
-</div>
-<div class="section" id="scalable-os-modifying-linux-kernel-with-ebpf-based-policies">
-<h3>[Scalable OS] Modifying Linux kernel with eBPF based policies</h3>
-<p>Applications often suffer from the performance regression due to the general
-interface provided by Linux. To address this issue, currently Linux provides
-eBPF to dynamically modify Linux to improve application performance.
-As a part of this project, you will explore how to modify various sub-systems
-of the Linux kernel, such as file systems, memory management, network stack,
-userspace probes to improve the performance of applications.</p>
-<p>In this project, you will:</p>
-<ul class="simple">
-<li>Understand applications requirements from the perspective of Linux.</li>
-<li>Implement policies at various subsystems to improve application performance.</li>
-</ul>
-<p>Prerequisite:</p>
-<ul class="simple">
-<li>Comfortable in exploring large code-base like the Linux kernel.</li>
-<li>Have a basic understanding of how operating systems work.</li>
 </ul>
 </div>
 <div class="section" id="robust-systems-collecting-and-analyzing-semantic-bugs-in-distributed-applications">
