@@ -28,7 +28,7 @@
 
     <link href="../theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
-        <link href="../assets/css/rs3lab.css?1698226333.9240015" rel="stylesheet">
+        <link href="../assets/css/rs3lab.css?1699215645.671762" rel="stylesheet">
 
 
 
@@ -165,31 +165,6 @@ change any locks across userspace and kernel-space.</p>
 <li>Benchmarking using software and hardware performance counter.</li>
 </ul>
 </div>
-<div class="section" id="scalable-os-choosing-the-best-locking-primitive">
-<h3>[Scalable OS] Choosing the best locking primitive</h3>
-<p>Applications are increasingly becoming more complex and are being deployed on
-heterogeneous hardware (NUMA, AMP etc.). A single lock design is not optimal in
-all cases. A wide range of lock algorithms have been proposed. This work
-proposes to analyze a set of algorithms and figure out which algorithms work
-best for which scenario.</p>
-<p>In this project, you will:</p>
-<ul class="simple">
-<li>Understand the latency of locking across various architectures.</li>
-<li>Analyze a set of lock algorithms across different workloads and different
-hardware (Intel / AMD / ARM / NUMA / AMP).</li>
-<li>Create a set of static or dynamic rules to figure out which algorithm will be
-optimal for a given workload on a given hardware.</li>
-</ul>
-<p>Prerequisite:</p>
-<ul class="simple">
-<li>Comfortable in exploring performance anomalies across different
-hardware/software.</li>
-</ul>
-<p>You will learn about:</p>
-<ul class="simple">
-<li>Synchronization primitives.</li>
-</ul>
-</div>
 <div class="section" id="scalable-os-admission-control-for-system-calls">
 <h3>[Scalable OS] Admission control for system calls</h3>
 <p>Multi-threaded applications increasingly use system calls to access shared
@@ -253,33 +228,6 @@ day one.</p>
 <li>Hardware behavior.</li>
 </ul>
 </div>
-<div class="section" id="concurrency-concurrency-control-protocols-in-rust">
-<h3>[Concurrency] Concurrency Control protocols in Rust</h3>
-<p>Concurrency Control protocols are the protocols which permit the end users to
-access the database in a concurrent and multi-threaded way with the illusion of
-executing their requests on a dedicated systems. Different concurrency control
-protocols have different performance and scalability under different workloads.
-The project tries to explore how the Rust language can benefit the
-implementation of these protocols with its stronger memory safety guarantee and
-whether or not the performance would alter due to the language features.</p>
-<p>In this project, you will:</p>
-<ul class="simple">
-<li>Implement different concurrency control protocols (2PL, Basic Timestamp, OCC,
-MVCC) in Rust.</li>
-<li>Measure the performance of these protocols under different workloads (YCSB,
-TPCC).</li>
-</ul>
-<p>Prerequisite:</p>
-<ul class="simple">
-<li>Proficiency in Rust</li>
-<li>A basic understanding of database and concurrency control protocols.</li>
-</ul>
-<p>You will learn about:</p>
-<ul class="simple">
-<li>Various concurrency protocols.</li>
-<li>Understanding various isolation levels used in databases.</li>
-</ul>
-</div>
 <div class="section" id="systems-for-ml-improving-the-performance-of-ml-workloads">
 <h3>[Systems for ML] Improving the performance of ML workloads</h3>
 <p>ML workloads are at the center stage of the 21st century computing evolution.
@@ -302,33 +250,6 @@ and across machines for both inference and training.</li>
 <p>You will learn:</p>
 <ul class="simple">
 <li>Understanding the performance of software systematically.</li>
-</ul>
-</div>
-<div class="section" id="robust-systems-collecting-and-analyzing-semantic-bugs-in-distributed-applications">
-<h3>[Robust Systems] Collecting and analyzing semantic bugs in distributed applications</h3>
-<p>Distributed applications, such as Zookeeper, HDFS and redis, are prone to
-semantic bugs due to the complex programming logics. However, detecting these
-bugs can be challenging as they occur silently without causing any process
-crashes. To address this, one approach is to manually review commits/patches or
-bug reports to identify the patterns of specific semantic bug types in a group
-of applications. This information can then be used to design checkers that can
-detect these bugs.</p>
-<p>In this project, you will:</p>
-<ul class="simple">
-<li>Collect semantic bugs of the popular distributed applications.</li>
-<li>Analyze their root causes and patterns.</li>
-<li>If time permits, develop the corresponding checkers.</li>
-</ul>
-<p>Prerequisite:</p>
-<ul class="simple">
-<li>Bug analysis (static and dynamic analysis)</li>
-<li>Basics about distributed applications</li>
-</ul>
-<p>You will learn:</p>
-<ul class="simple">
-<li>Semantic bug analysis and detection.</li>
-<li>Distributed application programming.</li>
-<li>Root-cause analysis.</li>
 </ul>
 </div>
 <div class="section" id="storage-understanding-new-storage-devices">
