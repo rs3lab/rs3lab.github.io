@@ -28,7 +28,7 @@
 
     <link href="../theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
-        <link href="../assets/css/rs3lab.css?1714574311.4764395" rel="stylesheet">
+        <link href="../assets/css/rs3lab.css?1719967809.301461" rel="stylesheet">
 
 
 
@@ -141,32 +141,8 @@ application in a rack scale environment.</li>
 <hr class="docutils" />
 <div class="section" id="projects-for-bachelors-and-masters-students">
 <h2>Projects for Bachelors and Masters students</h2>
-<div class="section" id="scalable-os-continuous-lock-switching-across-the-stack">
-<h3>[Scalable OS] Continuous lock switching across the stack</h3>
-<p>Applications are increasingly becoming more complex and are being deployed on
-heterogeneous hardware (NUMA, AMP etc.). However, in current systems, the lock
-mechanism remains static. SynCord is the first framework to implement dynamic
-lock switching for the kernel. This work proposes to extend the framework for
-userspace applications. The end goal is to create a holistic framework to
-change any locks across userspace and kernel-space.</p>
-<p>In this project, you will:</p>
-<ul class="simple">
-<li>Implement dynamic lock switching for userspace applications.</li>
-<li>Implement a mechanism to enforce lock policies across the stack.</li>
-</ul>
-<p>Prerequisite:</p>
-<ul class="simple">
-<li>Comfortable in exploring large codebases like the Linux kernel.</li>
-<li>Have a basic understanding of how operating systems work.</li>
-</ul>
-<p>You will learn about:</p>
-<ul class="simple">
-<li>Synchronization primitives.</li>
-<li>Benchmarking using software and hardware performance counter.</li>
-</ul>
-</div>
-<div class="section" id="scalable-os-admission-control-for-system-calls">
-<h3>[Scalable OS] Admission control for system calls</h3>
+<div class="section" id="scalable-os-admission-control-for-system-calls-vishal-gupta">
+<h3>[Scalable OS] Admission control for system calls (Vishal Gupta)</h3>
 <p>Multi-threaded applications increasingly use system calls to access shared
 resources (Network, IO, CPU, Memory). In current design, system calls done in
 parallel are admitted and it contends for resources. Increasing this
@@ -185,51 +161,93 @@ admission control policy based on threshold.</li>
 <li>Comfortable in exploring large code-base like the Linux kernel.</li>
 <li>Have a basic understanding of how operating systems work.</li>
 </ul>
+<p>References:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://faculty.cc.gatech.edu/~amsmti3/assets/protego-nsdi23.pdf">https://faculty.cc.gatech.edu/~amsmti3/assets/protego-nsdi23.pdf</a></li>
+</ul>
 </div>
-<div class="section" id="scalable-os-modifying-linux-kernel-with-ebpf-based-policies">
-<h3>[Scalable OS] Modifying Linux kernel with eBPF based policies</h3>
-<p>Applications often suffer from the performance regression due to the general
-interface provided by Linux. To address this issue, currently Linux provides
-eBPF to dynamically modify Linux to improve application performance.
-As a part of this project, you will explore how to modify various sub-systems
-of the Linux kernel, such as file systems, memory management, network stack,
-userspace probes to improve the performance of applications.</p>
+<div class="section" id="scalable-os-continuous-lock-switching-across-userspace-and-kernel-space-vishal-gupta">
+<h3>[Scalable OS] Continuous lock switching across Userspace and Kernel space (Vishal Gupta)</h3>
+<p>Applications are increasingly becoming more complex and are being deployed on
+heterogeneous hardware (NUMA, AMP etc.). However, in current systems, the lock
+mechanism remains static. SynCord is the first framework to implement dynamic
+lock switching for the kernel. This work proposes to extend the framework for
+userspace applications. The end goal is to create a holistic framework to
+change any locks across userspace and kernel space.</p>
 <p>In this project, you will:</p>
 <ul class="simple">
-<li>Understand applications requirements from the perspective of Linux.</li>
-<li>Implement policies at various subsystems to improve application performance.</li>
+<li>Implement dynamic lock switching for userspace applications.</li>
+<li>Implement an interface to implement lock policies across userspace and kernel space.</li>
+<li>Implement a mechanism to enforce lock policies across the stack.</li>
 </ul>
 <p>Prerequisite:</p>
 <ul class="simple">
-<li>Comfortable in exploring large code-base like the Linux kernel.</li>
+<li>Comfortable in exploring large codebases like the Linux kernel.</li>
 <li>Have a basic understanding of how operating systems work.</li>
 </ul>
+<p>References:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://faculty.cc.gatech.edu/~amsmti3/assets/protego-nsdi23.pdf">https://faculty.cc.gatech.edu/~amsmti3/assets/protego-nsdi23.pdf</a></li>
+</ul>
 </div>
-<div class="section" id="concurrency-verified-concurrent-algorithms">
-<h3>[Concurrency] Verified Concurrent Algorithms</h3>
-<p>Concurrent algorithms are the basic building of today's infrastructure. However,
-verifying their correctness is quite challenging. For example, the spinlock
-code in the Linux kernel had a bug for several years. In this project, we aim to
-verify the correctness of a set of concurrent algorithms using existing program
-verifiers, such as dafny or coq. By doing this, we can not only enable
-designing code that is not only scalable but also correct-by-construction from
-day one.</p>
+<div class="section" id="scalable-os-which-lock-is-the-best-vishal-gupta">
+<h3>[Scalable OS] Which lock is the best?  (Vishal Gupta)</h3>
+<p>Applications are becoming increasingly complex and are being deployed on
+heterogeneous hardware (NUMA, AMP, etc.). A single lock design is not optimal
+in all cases. A wide range of lock algorithms have been proposed. This work
+proposes to analyze a set of algorithms and figure out which algorithms work
+best for which scenarios.</p>
 <p>In this project, you will:</p>
 <ul class="simple">
-<li>Take an existing concurrent algorithm, specifically synchronization primitive.</li>
-<li>Understand and come up with safety properties.</li>
-<li>Implement the code in any verification language of your choice.</li>
+<li>Analyze a set of lock algorithms across different workloads and different
+hardware (Intel / AMD / ARM / NUMA / AMP).</li>
+<li>Create a set of static or dynamic rules to determine which algorithm is
+optimal for a given workload on a given hardware.</li>
 </ul>
-<p>You will learn about:</p>
+<p>Prerequisite:</p>
 <ul class="simple">
-<li>Concurrent algorithms.</li>
-<li>Concurrent program verification.</li>
-<li>Memory models.</li>
-<li>Hardware behavior.</li>
+<li>Comfortable in exploring performance anomalies across different
+hardware/software.</li>
+</ul>
+<p>References:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://faculty.cc.gatech.edu/~amsmti3/assets/protego-nsdi23.pdf">https://faculty.cc.gatech.edu/~amsmti3/assets/protego-nsdi23.pdf</a></li>
 </ul>
 </div>
-<div class="section" id="systems-for-ml-improving-the-performance-of-ml-workloads">
-<h3>[Systems for ML] Improving the performance of ML workloads</h3>
+<div class="section" id="scalable-os-faster-uprobes-using-user-mode-ebpf-kumar-kartikeya-dwivedi">
+<h3>[Scalable OS] Faster Uprobes using User Mode eBPF  (Kumar Kartikeya Dwivedi)</h3>
+<p>BPF based tracing is used to execute programs and collect data when certain
+functions are triggered in the kernel. The same is possible in user space using
+the ‘user probes’ feature, where programs are executed when USDT probes are
+triggered within the user space applications. However, currently the
+implementation of uprobes requires trapping in to the kernel whenever an event
+occurs, leading to slowdowns in applications, and being up to 2x slower than
+system call context switches. This project explores whether the inception of a
+new ‘user mode eBPF’ mode and making uprobes execute such program types in user
+space will be faster and have the same level of usability. The ideal end goal
+would be to attain transparent 100% compatibility with the current uprobe
+mechanism.</p>
+<p>In this project, you will:</p>
+<ul class="simple">
+<li>Develop a deep understanding of the eBPF verifier’s static analysis process.</li>
+<li>Create a new ‘user mode eBPF’ program type for eBPF.</li>
+<li>Measure and benchmark usability and performance differences between the
+current uprobe mechanism and the one based on user mode eBPF.</li>
+</ul>
+<p>Prerequisite:</p>
+<ul class="simple">
+<li>A basic level of understanding of eBPF.</li>
+<li>Proficiency in C and Python.</li>
+</ul>
+<p>References:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://lwn.net/Articles/753601">https://lwn.net/Articles/753601</a></li>
+<li><a class="reference external" href="https://lore.kernel.org/bpf/20211116013041.4072571-1-andrii&#64;kernel.org">https://lore.kernel.org/bpf/20211116013041.4072571-1-andrii&#64;kernel.org</a></li>
+<li><a class="reference external" href="https://www.brendangregg.com/blog/2015-06-28/linux-ftrace-uprobe.html">https://www.brendangregg.com/blog/2015-06-28/linux-ftrace-uprobe.html</a></li>
+</ul>
+</div>
+<div class="section" id="systems-for-ml-improving-the-performance-of-ml-workloads-yueyang-pan">
+<h3>[Systems for ML] Improving the performance of ML workloads (Yueyang Pan)</h3>
 <p>ML workloads are at the center stage of the 21st century computing evolution.
 However, software that runs them is not entirely efficient. Thus, to efficiently
 utilize current hardware, whether for inference or training, within a single
@@ -252,27 +270,31 @@ and across machines for both inference and training.</li>
 <li>Understanding the performance of software systematically.</li>
 </ul>
 </div>
-<div class="section" id="storage-understanding-new-storage-devices">
-<h3>[Storage] Understanding new storage devices</h3>
-<p>Storage devices comes in various forms and factors. For instance, today's
-machines are already equipped with flash based storage devices, such as SSDs.
-However, there are several performance issues with the stack supporting current
-SSDs, mostly because of how SSDs have been designed. To avoid some set of
-problems, there are new devices coming in the market, such as Zoned Namespace
-SSDs (ZNS), SmartSSDs, and persistent memory (PM). Hence, this projects aims to
-understand the performance of storage stacks for these new storage media.</p>
+<div class="section" id="robustness-understanding-semantic-bugs-in-distributed-applications-tao-lyu">
+<h3>[Robustness] Understanding semantic bugs in distributed applications  (Tao Lyu)</h3>
+<p>Distributed applications, such as Zookeeper, HDFS and redis, are prone to
+semantic bugs due to the complex programming logics. However, detecting these
+bugs can be challenging as they occur silently without causing any process
+crashes. To address this, one approach is to manually review commits/patches or
+bug reports to identify the patterns of specific semantic bug types in a group
+of applications. This information can then be used to design checkers that can
+detect these bugs.</p>
 <p>In this project, you will:</p>
 <ul class="simple">
-<li>Evaluate the performance characteristics of any of these devices.</li>
-<li>Design a set of benchmarks that specifically target such devices for various
-scenarios.</li>
-<li>Contrast their performance with SSDs.</li>
+<li>Collect semantic bugs of the popular distributed applications.</li>
+<li>Analyze their root causes and patterns.</li>
+<li>If time permits, develop the corresponding checkers.</li>
 </ul>
-<p>You will learn:</p>
+<p>Prerequisite:</p>
 <ul class="simple">
-<li>File system design.</li>
-<li>Scalability of storage stacks.</li>
-<li>Behavior of existing storage hardware.</li>
+<li>Bug analysis (static and dynamic analysis)</li>
+<li>Basics about distributed applications</li>
+</ul>
+<p>References:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://dl.acm.org/doi/pdf/10.1145/2872362.2872374">https://dl.acm.org/doi/pdf/10.1145/2872362.2872374</a></li>
+<li><a class="reference external" href="https://dl.acm.org/doi/pdf/10.1145/3296957.3177161">https://dl.acm.org/doi/pdf/10.1145/3296957.3177161</a></li>
+<li><a class="reference external" href="https://dl.acm.org/doi/pdf/10.1145/3093337.3037735">https://dl.acm.org/doi/pdf/10.1145/3093337.3037735</a></li>
 </ul>
 <hr class="docutils" />
 <p>In case you have projects that are not mentioned above but fall under the
