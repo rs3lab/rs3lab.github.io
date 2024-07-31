@@ -28,7 +28,7 @@
 
     <link href="../theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
-        <link href="../assets/css/rs3lab.css?1722462099.404704" rel="stylesheet">
+        <link href="../assets/css/rs3lab.css?1722462929.047133" rel="stylesheet">
 
 
 
@@ -233,6 +233,7 @@ locking algorithms.</p>
 <div class="pub" data-type="Conference paper" data-topic="System" data-key="hu:skadi">
  <div class="pub-meta">
   <div class="pub-links">
+   <a title="Paper" href="../assets/papers/2023/hu:skadi.pdf"><i class="icon-file"></i></a>
   </div>
   <span class="pub-title">Skadi: Building a Distributed Runtime for Data Systems in Disaggregated Data Centers</span>
   <a href="#hu:skadi" class="pub-expand"><i class="icon-expand"></i></a>
@@ -241,6 +242,21 @@ locking algorithms.</p>
   <abbr class="pub-in" title="19th USENIX Workshop on Hot Topics in Operating Systems (HotOS) (HotOS XIX), Providence, RI, June 2023.">HotOS XIX 2023.</abbr>
  </div>
  <div class="pub-details">
+<p>Data-intensive systems are the backbone of today’s computing and are responsible
+for shaping data centers. Over the years, cloud providers have relied on three
+principles to maintain cost-effective data systems: use disaggregation to
+decouple scaling, use domain-specific computing to battle waning laws, and use
+serverless to lower costs. Although they work well individually, they fail to
+work in harmony: an issue amplified by emerging data system workloads.</p>
+<p>In this paper, we envision a distributed runtime to mitigate current
+shortcomings. The distributed runtime has a tiered access layer exposing
+declarative APIs, underpinned by a stateful serverless runtime with a
+distributed task execution model. It will be the narrow waist between data
+systems and hardware. Users are oblivious to data location, concurrency,
+disaggregation style, or even the hardware to do the computing. The underlying
+stateful serverless runtime transparently evolves with novel data-center
+architectures, such as disaggregation and tightly-coupled clusters. We
+prototype Skadi to showcase that the distributed runtime is practical.</p>
   <pre>@inproceedings{hu:skadi,
   title        = {{Skadi: Building a Distributed Runtime for Data Systems in Disaggregated Data Centers}},
   author       = {Cunchen Hu and Chenxi Wang and Sa Wang and Ninghui Sun and Yungang Bao and Jieru Zhao and Sanidhya Kashyap and Xiaoyang Deng and
