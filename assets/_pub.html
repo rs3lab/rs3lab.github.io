@@ -16,6 +16,7 @@
 <div class="pub" data-type="Conference paper" data-topic="System" data-key="dwivedi:kflex">
  <div class="pub-meta">
   <div class="pub-links">
+   <a title="Paper" href="../assets/papers/2024/dwivedi:kflex.pdf"><i class="icon-file"></i></a>
   </div>
   <span class="pub-title">Fast, Flexible, and Practical Kernel Extensions</span>
   <a href="#dwivedi:kflex" class="pub-expand"><i class="icon-expand"></i></a>
@@ -24,6 +25,9 @@
   <abbr class="pub-in" title="Proceedings of the 30th ACM Symposium on Operating Systems Principles (SOSP), Austin, TX, November 2024.">SOSP 2024.</abbr>
  </div>
  <div class="pub-details">
+<p>The ability to safely extend OS kernel functionality is a long-standing goal in OS design, with the widespread use of the eBPF framework in Linux and Windows demonstrating the benefits of such extensibility. However, existing solutions for kernel extensibility (including eBPF) are limited and constrain users either in the extent of functionality that they can offload to the kernel or the performance overheads incurred by their extensions.</p>
+<p>We present KFlex: a new approach to kernel extensibility that strikes an improved balance between the expressivity and performance of kernel extensions. To do so, KFlex separates the safety of kernel-owned resources (e.g., kernel memory) from the safety of extension-specific resources (e.g., extension memory). This separation enables KFlex to use distinct, bespoke mechanisms to enforce each safety property—automated verification and lightweight runtime checks, respectively—which enables the offload of diverse functionality while incurring low runtime overheads.</p>
+<p>We realize KFlex in the context of Linux. We demonstrate that KFlex enables users to offload functionality that cannot be offloaded today and provides significant end-to-end performance benefits for applications. Several of KFlex’s proposed mechanisms have been upstreamed into the Linux kernel mainline, with efforts ongoing for full integration.</p>
   <pre>@inproceedings{dwivedi:kflex,
   title        = {{Fast, Flexible, and Practical Kernel Extensions}},
   author       = {Kumar Kartikeya Dwivedi and Rishabh Iyer and Sanidhya Kashyap},
