@@ -42,6 +42,9 @@
 <div class="pub" data-type="Conference paper" data-topic="Fuzzing" data-key="tao:monarch">
  <div class="pub-meta">
   <div class="pub-links">
+   <a title="Homepage" href="https://github.com/rs3lab/Monarch"><i class="icon-www"></i></a>
+   <a title="Slides" href="../assets/papers/2024/tao:monarch-slides.pdf"><i class="icon-slides"></i></a>
+   <a title="Paper" href="../assets/papers/2024/tao:monarch.pdf"><i class="icon-file"></i></a>
   </div>
   <span class="pub-title">Monarch: A Fuzzing Framework for Distributed File Systems</span>
   <a href="#tao:monarch" class="pub-expand"><i class="icon-expand"></i></a>
@@ -50,6 +53,33 @@
   <abbr class="pub-in" title="Proceedings of the 2024 USENIX Annual Technical Conference (ATC), Santa Clara, CA, July 2024.">ATC 2024.</abbr>
  </div>
  <div class="pub-details">
+<pre><code>Distributed file systems (DFSes) are prone to bugs.
+Although numerous bug-finding techniques have been applied to DFSes,
+static analysis does not scale well with the sheer complexity of DFS codebases
+while dynamic methods (e.g., regression testing) are limited by the quality of test cases.
+Although both can be improved by pouring in manual effort,
+they are less practical when facing a diverse set of real-world DFSes.
+Fuzzing, on the other hand, has shown great success in local systems.
+However, several problems exist if we apply existing fuzzers
+to DFSes as they
+1) cannot test multiple components of DFSes holistically;
+2) miss the critical testing aspects of DFSes (e.g., distributed faults);
+3) have not yet explored the practical state representations as fuzzing feedback; and
+4) lack checkers for asserting semantic bugs unique to DFSes.
+
+In this paper,
+we introduce Monarch,
+a multi-node fuzzing framework
+to test all POSIX-compliant DFSes under one umbrella.
+Monarch pioneers push-button fuzzing for DFSes
+with a new set of building blocks to the fuzzing toolbox:
+1) A multi-node fuzzing architecture for testing diverse DFSes from a holistic perspective;
+2) A two-step mutator for testing DFSes with syscalls and faults;
+3) Practical execution state representations with a unified coverage collection scheme across execution contexts;
+4) A new DFSes semantic checker SYMSC.
+We applied Monarch to six DFSes and uncovered a total of 48 bugs,
+including a bug whose existence can be traced back to the initial release of the DFSes.
+</code></pre>
   <pre>@inproceedings{tao:monarch,
   title        = {{Monarch: A Fuzzing Framework for Distributed File Systems}},
   author       = {Tao Lyu and Liyi Zhang and Zhiyao Feng and Yueyang Pan and Yujie Ren and Meng Xu and Mathias Payer and Sanidhya Kashyap},
