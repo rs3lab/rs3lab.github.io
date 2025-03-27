@@ -16,6 +16,8 @@
 <div class="pub" data-type="Conference paper" data-topic="File system" data-key="yujie:polystore">
  <div class="pub-meta">
   <div class="pub-links">
+   <a title="Slides" href="../assets/papers/2025/yujie:polystore-slides.pdf"><i class="icon-slides"></i></a>
+   <a title="Paper" href="../assets/papers/2025/yujie:polystore.pdf"><i class="icon-file"></i></a>
   </div>
   <span class="pub-title">PolyStore: Exploiting Combined Capabilities of Heterogeneous Storage</span>
   <a href="#yujie:polystore" class="pub-expand"><i class="icon-expand"></i></a>
@@ -24,6 +26,22 @@
   <abbr class="pub-in" title="23rd USENIX Conference on File and Storage Technologies (FAST) (FAST 25), Santa Clara, CA, February 2025.">FAST  2025.</abbr>
  </div>
  <div class="pub-details">
+<p>With the "non-hierarchical" trend in emerging storage media, 
+the philosophy of hierarchy inevitably falls short in fully 
+leveraging the combined bandwidth of multiple devices. 
+In this paper, we propose a horizontally structured storage 
+architecture that leverages the combined capabilities of 
+heterogeneous devices. 
+We introduce PolyStore, a meta layer atop storage medium-optimized 
+file systems that spans userspace and the OS, allowing applications 
+to access multiple storage devices concurrently with transparent, 
+fine-grained data placement. 
+PolyStore maximizes cumulative storage bandwidth and reduces 
+hardware and software bottlenecks without compromising important 
+properties such as sharing and security. 
+Our evaluations show that PolyStore achieves 1.11X- 9.38X performance 
+gains for micro-benchmarks and 1.52X- 2.02X for real-world 
+applications across various device configurations.</p>
   <pre>@inproceedings{yujie:polystore,
   title        = {{PolyStore: Exploiting Combined Capabilities of Heterogeneous Storage}},
   author       = {Yujie Ren and David Domingo and Jian Zhang and Paul John and Rekha Pitchumani and Sanidhya Kashyap and Sudarsun Kannan},
