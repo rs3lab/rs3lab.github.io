@@ -28,7 +28,7 @@
 
     <link href="../theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
-        <link href="../assets/css/rs3lab.css?1752256965.3716" rel="stylesheet">
+        <link href="../assets/css/rs3lab.css?1754312984.5265326" rel="stylesheet">
 
 
 
@@ -141,6 +141,32 @@ application in a rack scale environment.</li>
 <hr class="docutils" />
 <div class="section" id="projects-for-bachelors-and-masters-students">
 <h2>Projects for Bachelors and Masters students</h2>
+<div class="section" id="safety-security-online-ebpf-verifier-specification-explorer">
+<h3>[Safety/Security] Online eBPF verifier specification explorer</h3>
+<p>eBPF compilation today is tightly coupled to specific Clang and Linux-kernel versions,
+and the safety guarantees enforced by the in-kernel eBPF verifier are opaque,
+making it hard for developers and researchers to explore exactly which properties are being checked
+either by running programs or manually checking the verifier.</p>
+<p>Our latest research paper proposes and implements the first specification for eBPF verifier.
+Now, we want to make that specification accessible and interactive---so
+anyone can write small eBPF programs online and immediately see which safety checks they satisfy or violate.</p>
+<p>To do so, this project aims to implement a website base on
+[compiler explorer](<a class="reference external" href="https://github.com/compiler-explorer/compiler-explorer">https://github.com/compiler-explorer/compiler-explorer</a>),
+where users can:
+- paste or write eBPF C code
+- invoke our SMT-based verifier specification
+- view detailed, human-readable feedback on which safety conditions pass or fail
+- except the web site, you will also learn about SMT-based formal verification.</p>
+<p>What You’ll Learn
+- Web-application setup and deployment (host your own Compiler Explorer instance)
+- Integrating a C-to-BPF toolchain (Clang + LLVM) with a custom back-end
+- Encoding program properties into SMT formulas and interpreting solver outputs
+- Basics of formal methods applied to low-level systems code</p>
+<p>Prerequisite:
+- Familiar with setting up and customizing web services (or eager to learn)
+- Interest in formal verification, especially SMT-based approaches
+- Familiarity with C programming and the Linux environment is a plus</p>
+</div>
 <div class="section" id="memory-management-memory-allocators-in-tiered-memory-musa-unal">
 <h3>[Memory Management] Memory allocators in tiered memory (Musa Unal)</h3>
 <p>Memory management is a critical component of operating systems.
@@ -316,31 +342,6 @@ and across machines for both inference and training.</li>
 <p>You will learn:</p>
 <ul class="simple">
 <li>Understanding the performance of software systematically.</li>
-</ul>
-</div>
-<div class="section" id="program-analysis-safe-and-automated-program-partitioning-for-kernel-offloading-tao-lyu">
-<h3>[Program Analysis] Safe and Automated Program Partitioning for Kernel Offloading (Tao Lyu)</h3>
-<p>Modern operating systems, such as the Linux kernel, manage to provide generality and
-security protection for userspace applications. Inevitably, this design deprives the
-direct communication between applications and hardware, leading to heavy costs
-because of context switches, copying between userspace and kernel,
-and redundant kernel abstractions for applications.</p>
-<p>To address this challenge, we propose the automated program partitioning for
-transparent and safe kernel offloading to avoid these costs.
-This approach—a push-button performance improvement approach—will empower developers to
-enhance their application performance without manual effort.</p>
-<p>Keywords: program partition, kernel offloading with eBPF</p>
-<p>Starting time: Summer or fall 2025</p>
-<p>Prerequisite:</p>
-<ul class="simple">
-<li>This research project is <strong>for a master's thesis or for students looking for long-term research projects.</strong></li>
-<li>The students should be self-motivated and aim to conduct complete research (e.g., baseline design + evaluation).</li>
-<li>The students should have strong coding ability and know basic usage of eBPF.</li>
-</ul>
-<p>References:</p>
-<ul class="simple">
-<li><a class="reference external" href="https://cs.nyu.edu/~apanda/assets/papers/ebpf-hotos23.pdf">https://cs.nyu.edu/~apanda/assets/papers/ebpf-hotos23.pdf</a></li>
-<li><a class="reference external" href="https://www.usenix.org/system/files/osdi22_slides_huang-yongzhe.pdf">https://www.usenix.org/system/files/osdi22_slides_huang-yongzhe.pdf</a></li>
 </ul>
 <hr class="docutils" />
 <p>In case you have projects that are not mentioned above but fall under the
