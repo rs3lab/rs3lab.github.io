@@ -16,6 +16,7 @@
 <div class="pub" data-type="Conference paper" data-topic="" data-key="lyu:veritas">
  <div class="pub-meta">
   <div class="pub-links">
+   <a title="Paper" href="../assets/papers/2025/lyu:veritas.pdf"><i class="icon-file"></i></a>
   </div>
   <span class="pub-title">eBPF Misbehavior Detection: Fuzzing with a Specification-Based Oracle</span>
   <a href="#lyu:veritas" class="pub-expand"><i class="icon-expand"></i></a>
@@ -24,6 +25,8 @@
   <abbr class="pub-in" title="Proceedings of the 31st ACM Symposium on Operating Systems Principles (SOSP), Seoul, Korea, October 2025.">SOSP 2025.</abbr>
  </div>
  <div class="pub-details">
+<p>Bugs in the Linux eBPF verifier may cause it to mistakenly accept unsafe eBPF programs or reject safe ones, causing either security or usability issues. While prior works on fuzzing the eBPF verifier have been effective, their bug oracles only hint at the existence of bugs indirectly (e.g., when a memory error occurs in downstream execution) instead of showing the root cause, confining them to uncover a narrow range of security bugs only with no detection of usability issues.</p>
+<p>In this paper, we propose SpecCheck, a specification-based oracle integrated with our fuzzer Beacon, to detect a wide range of bugs in the eBPF verifier. SpecCheck encodes eBPF instruction semantics and safety properties as a specification and turn the claim of whether a concrete eBPF program is safe into checking the satisfiability of the corresponding safety constraints, which can be reasoned automatically without abstraction. The output from the oracle will be cross-checked with the eBPF verifier for any discrepancies. Using SpecCheck, Beacon uncovered 15 bugs in the Linux eBPF verifier, including severe bugs that can cause privilege escalation or information leakage, as well as bugs that cause frustration in even experienced kernel developers.</p>
   <pre>@inproceedings{lyu:veritas,
   title        = {{eBPF Misbehavior Detection: Fuzzing with a Specification-Based Oracle}},
   author       = {Tao Lyu and Kumar Kartikeya Dwivedi and Thomas Bourgeat and Mathias Payer and Meng Xu and Sanidhya Kashyap},
@@ -38,6 +41,7 @@
 <div class="pub" data-type="Conference paper" data-topic="System" data-key="pan:mage">
  <div class="pub-meta">
   <div class="pub-links">
+   <a title="Paper" href="../assets/papers/2025/pan:mage.pdf"><i class="icon-file"></i></a>
   </div>
   <span class="pub-title">Scalable Far Memory: Balancing Faults and Evictions</span>
   <a href="#pan:mage" class="pub-expand"><i class="icon-expand"></i></a>
@@ -46,6 +50,8 @@
   <abbr class="pub-in" title="Proceedings of the 31st ACM Symposium on Operating Systems Principles (SOSP), Seoul, Korea, October 2025.">SOSP 2025.</abbr>
  </div>
  <div class="pub-details">
+<p>Page-based far memory systems transparently expand an application's memory capacity beyond a single machine without modifying application code. However, existing systems are tailored to scenarios with low application thread counts, and fail to scale on today's multi-core machines. This makes them unsuitable for data-intensive applications that both rely on far memory support and scale with increasing thread count. Our analysis reveals that this poor scalability stems from inefficient holistic coordination between page fault-in and eviction operations. As thread count increases, current systems encounter scalability bottlenecks in TLB shootdowns, page accounting, and memory allocation.</p>
+<p>This paper presents three design principles that address these scalability challenges and enable efficient memory offloading. These principles are always-asynchronous decoupling to handle eviction operations as asynchronously as possible, cross-batch pipelined execution to avoid idle waiting periods, and scalability prioritization to avoid synchronization overheads at high thread counts at the cost of eviction accuracy. We implement these principles in both the Linux kernel and a library OS. Our evaluation shows that this approach increases throughput for batch-processing applications by up to 4.2x and reduces 99th percentile latency for a latency-critical memcached application by 94.5%.</p>
   <pre>@inproceedings{pan:mage,
   title        = {{Scalable Far Memory: Balancing Faults and Evictions}},
   author       = {Yueyang Pan and Yash Lala and Musa Unal and Yujie Ren and Seung-seob Lee and Abhishek Bhattacharjee and Anurag Khandelwal and
@@ -61,6 +67,7 @@
 <div class="pub" data-type="Conference paper" data-topic="Concurrency" data-key="laforet:flexguard">
  <div class="pub-meta">
   <div class="pub-links">
+   <a title="Paper" href="../assets/papers/2025/laforet:flexguard.pdf"><i class="icon-file"></i></a>
   </div>
   <span class="pub-title">FlexGuard: Fast Mutual Exclusion Independent of Subscription</span>
   <a href="#laforet:flexguard" class="pub-expand"><i class="icon-expand"></i></a>
@@ -69,6 +76,7 @@
   <abbr class="pub-in" title="Proceedings of the 31st ACM Symposium on Operating Systems Principles (SOSP), Seoul, Korea, October 2025.">SOSP 2025.</abbr>
  </div>
  <div class="pub-details">
+<p>Performance-oriented applications require efficient locks to harness the computing power of multicore architectures. While fast, spinlock algorithms suffer severe performance degradation when thread counts exceed available hardware capacity, i.e., in oversubscribed scenarios. Existing solutions rely on imprecise heuristics for blocking, leading to suboptimal performance. We present FlexGuard, the first approach that systematically switches from busy-waiting to blocking precisely when a lock-holding thread is preempted. FlexGuard achieves this by communicating with the OS scheduler via eBPF, unlike prior approaches. FlexGuard matches or improves performance in LevelDB, a memory-optimized database index, PARSEC's Dedup, and SPLASH2X's Raytrace and Streamcluster, boosting throughput by 1-6x in non-oversubscribed and up to 5x in oversubscribed scenarios.</p>
   <pre>@inproceedings{laforet:flexguard,
   title        = {{FlexGuard: Fast Mutual Exclusion Independent of Subscription}},
   author       = {Victor Laforet and Sanidhya Kashyap and C&#259;lin Iorgulescu and Julia Lawall and Jean-Pierre Lozi},
@@ -79,19 +87,22 @@
 }</pre>
  </div>
 </div>
-<div id="jeon:arfksbugs" class="pub-id"></div>
-<div class="pub" data-type="Conference paper" data-topic="" data-key="jeon:arfksbugs">
+<div id="jeon:arckfsfix" class="pub-id"></div>
+<div class="pub" data-type="Conference paper" data-topic="" data-key="jeon:arckfsfix">
  <div class="pub-meta">
   <div class="pub-links">
+   <a title="Paper" href="../assets/papers/2025/jeon:arckfsfix.pdf"><i class="icon-file"></i></a>
   </div>
   <span class="pub-title">Analyzing and Enhancing ArckFS: An Anecdotal Example of Benefits of Artifact Evaluation</span>
-  <a href="#jeon:arfksbugs" class="pub-expand"><i class="icon-expand"></i></a>
+  <a href="#jeon:arckfsfix" class="pub-expand"><i class="icon-expand"></i></a>
   <a href="#/" class="pub-collapse"><i class="icon-collapse"></i></a>
   <span class="pub-author">Jonguk Jeon, Subeen Park, Sanidhya Kashyap, Sudarsun Kannan, Diyu Zhou, and Jeehoon Kang.</span>
   <abbr class="pub-in" title="Proceedings of the 31st ACM Symposium on Operating Systems Principles (SOSP), Seoul, Korea, October 2025.">SOSP 2025.</abbr>
  </div>
  <div class="pub-details">
-  <pre>@inproceedings{jeon:arfksbugs,
+<p>We analyze and enhance Trio and ArckFS by Zhou et al. (SOSP 2023), high-performance NVM file system architecture and file system. A group of authors from KAIST initiated this study through a careful review of the paper and the released artifact, seeking to enhance the Trio work. Their analysis identifies (1) insufficient clarity in the paper on the handling of multi-inode operations, and (2) several implementation bugs in ArckFS that cause occasional operation failures or potential crash inconsistencies during inode creation.</p>
+<p>Through close collaboration between the KAIST and Trio authors, we have enhanced the Trio work. (1) We clarify a few relevant rules for ArckFS to handle multi-inode operations. (2) We develop patches for the identified bugs, which essentially maintain the performance claims made in the Trio paper. Our study highlights the crucial role of artifact evaluation in systems research and its potential benefits.</p>
+  <pre>@inproceedings{jeon:arckfsfix,
   title        = {{Analyzing and Enhancing ArckFS: An Anecdotal Example of Benefits of Artifact Evaluation}},
   author       = {Jonguk Jeon and Subeen Park and Sanidhya Kashyap and Sudarsun Kannan and Diyu Zhou and Jeehoon Kang},
   booktitle    = {Proceedings of the 31st ACM Symposium on Operating Systems Principles (SOSP)},
@@ -105,6 +116,7 @@
 <div class="pub" data-type="Conference paper" data-topic="System" data-key="li:jord">
  <div class="pub-meta">
   <div class="pub-links">
+   <a title="Paper" href="../assets/papers/2025/li:jord.pdf"><i class="icon-file"></i></a>
   </div>
   <span class="pub-title">Single-Address-Space FaaS with Jord</span>
   <a href="#li:jord" class="pub-expand"><i class="icon-expand"></i></a>
@@ -113,6 +125,23 @@
   <abbr class="pub-in" title="Proceedings of the 52nd ACM/IEEE International Symposium on Computer Architecture (ISCA), Tokyo, Japan, June 2025.">ISCA 2025.</abbr>
  </div>
  <div class="pub-details">
+<p>Function-as-a-Service (FaaS) has emerged as a popular cloud paradigm that simplifies software development and deployment by
+providing scalable and event-driven function execution without
+the burden of managing servers. FaaS was originally created with a
+function as a function semantics to enable standalone microservices
+with adequately short execution time to meet microsecond-scale
+service-level objectives (SLOs). Unfortunately, today’s FaaS systems
+fundamentally suffer from millisecond-level performance bottlenecks that arise from isolating functions in separate address spaces
+inside containers or microVMs. Prior work has focused on optimizing FaaS performance, but these systems still fall short of meeting
+microsecond-level SLOs. In this paper, we present Jord, a FaaS system that revives the original function-as-a-function vision of FaaS.
+Jord leverages hardware/software co-design to colocate functions
+in a single address space with user-level in-process memory isolation, extending the capability of traditional virtual memory. By
+performing memory isolation and management in nanoseconds,
+Jord enables zero-copy cross-function communication and scalable
+function dispatch, thereby minimizing FaaS overheads. We demonstrate that Jord can meet microsecond-level SLOs for microservice
+workloads while performing within 16% of an idealized but insecure
+baseline and delivering over 2x higher throughput compared to
+enhanced state-of-the-art systems.</p>
   <pre>@inproceedings{li:jord,
   title        = {{Single-Address-Space FaaS with Jord}},
   author       = {Yuanlong Li and Atri Bhattacharyya and Madhur Kumar and Abhishek Bhattacharjee and Yoav Etsion and Babak Falsafi and Sanidhya
