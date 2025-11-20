@@ -28,7 +28,7 @@
 
     <link href="../theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
-        <link href="../assets/css/rs3lab.css?1763649100.1125066" rel="stylesheet">
+        <link href="../assets/css/rs3lab.css?1763649283.3440154" rel="stylesheet">
 
 
 
@@ -252,77 +252,22 @@ in tiered memory.</p>
 <li><a class="reference external" href="https://docs.kernel.org/scheduler/sched-energy.html">https://docs.kernel.org/scheduler/sched-energy.html</a></li>
 </ul>
 </div>
-<div class="section" id="scalable-os-admission-control-for-system-calls-vishal-gupta">
-<h3>[Scalable OS] Admission control for system calls (Vishal Gupta)</h3>
-<p>Multi-threaded applications increasingly use system calls to access shared
-resources (Network, IO, CPU, Memory). In current design, system calls done in
-parallel are admitted and it contends for resources. Increasing this
-parallelism of system calls however results in diminishing returns. This
-project aims to analyze this threshold and implement an admission control
-mechanism for system calls.</p>
+<div class="section" id="scalable-os-linux-kernel-data-structure-switching-vishal-gupta">
+<h3>[Scalable OS] Linux Kernel Data Structure Switching (Vishal Gupta)</h3>
+<p>The Linux kernel uses multiple data structures across different subsystems to store data.
+This includes linked list, hash table, red-black tree and maple tree.
+However, based on different access patterns these data structures might not be optimal.</p>
 <p>In this project, you will:</p>
 <ul class="simple">
-<li>Figure out thresholds for a set of system calls after which it results in
-diminishing returns.</li>
-<li>Implement an admission control mechanism and use it to implement the
-admission control policy based on threshold.</li>
+<li>Implement mechanisms to switch between different kernel data structures.</li>
+<li>Implement policies to decide when to switch.</li>
 </ul>
-<p>Prerequisite:</p>
+<p>Prerequisite: Understanding of kernel data structures.</p>
 <ul class="simple">
-<li>Comfortable in exploring large code-base like the Linux kernel.</li>
-<li>Have a basic understanding of how operating systems work.</li>
-</ul>
-<p>References:</p>
-<ul class="simple">
-<li><a class="reference external" href="https://faculty.cc.gatech.edu/~amsmti3/assets/protego-nsdi23.pdf">https://faculty.cc.gatech.edu/~amsmti3/assets/protego-nsdi23.pdf</a></li>
-</ul>
-</div>
-<div class="section" id="scalable-os-continuous-lock-switching-across-userspace-and-kernel-space-vishal-gupta">
-<h3>[Scalable OS] Continuous lock switching across Userspace and Kernel space (Vishal Gupta)</h3>
-<p>Applications are increasingly becoming more complex and are being deployed on
-heterogeneous hardware (NUMA, AMP etc.). However, in current systems, the lock
-mechanism remains static. SynCord is the first framework to implement dynamic
-lock switching for the kernel. This work proposes to extend the framework for
-userspace applications. The end goal is to create a holistic framework to
-change any locks across userspace and kernel space.</p>
-<p>In this project, you will:</p>
-<ul class="simple">
-<li>Implement dynamic lock switching for userspace applications.</li>
-<li>Implement an interface to implement lock policies across userspace and kernel space.</li>
-<li>Implement a mechanism to enforce lock policies across the stack.</li>
-</ul>
-<p>Prerequisite:</p>
-<ul class="simple">
-<li>Comfortable in exploring large codebases like the Linux kernel.</li>
-<li>Have a basic understanding of how operating systems work.</li>
-</ul>
-<p>References:</p>
-<ul class="simple">
-<li><a class="reference external" href="https://faculty.cc.gatech.edu/~amsmti3/assets/protego-nsdi23.pdf">https://faculty.cc.gatech.edu/~amsmti3/assets/protego-nsdi23.pdf</a></li>
-</ul>
-</div>
-<div class="section" id="scalable-os-which-lock-is-the-best-vishal-gupta">
-<h3>[Scalable OS] Which lock is the best?  (Vishal Gupta)</h3>
-<p>Applications are becoming increasingly complex and are being deployed on
-heterogeneous hardware (NUMA, AMP, etc.). A single lock design is not optimal
-in all cases. A wide range of lock algorithms have been proposed. This work
-proposes to analyze a set of algorithms and figure out which algorithms work
-best for which scenarios.</p>
-<p>In this project, you will:</p>
-<ul class="simple">
-<li>Analyze a set of lock algorithms across different workloads and different
-hardware (Intel / AMD / ARM / NUMA / AMP).</li>
-<li>Create a set of static or dynamic rules to determine which algorithm is
-optimal for a given workload on a given hardware.</li>
-</ul>
-<p>Prerequisite:</p>
-<ul class="simple">
-<li>Comfortable in exploring performance anomalies across different
-hardware/software.</li>
-</ul>
-<p>References:</p>
-<ul class="simple">
-<li><a class="reference external" href="https://faculty.cc.gatech.edu/~amsmti3/assets/protego-nsdi23.pdf">https://faculty.cc.gatech.edu/~amsmti3/assets/protego-nsdi23.pdf</a></li>
+<li>Linked list:   <a class="reference external" href="https://github.com/torvalds/linux/tree/master/include/linux/list.h">https://github.com/torvalds/linux/tree/master/include/linux/list.h</a></li>
+<li>Hash Table: <a class="reference external" href="https://github.com/torvalds/linux/tree/master/include/linux/hashtable.h">https://github.com/torvalds/linux/tree/master/include/linux/hashtable.h</a></li>
+<li>Red-Black Tree: <a class="reference external" href="https://github.com/torvalds/linux/tree/master/include/linux/rbtree.h">https://github.com/torvalds/linux/tree/master/include/linux/rbtree.h</a></li>
+<li>Maple Tree: <a class="reference external" href="https://github.com/torvalds/linux/tree/master/include/linux/maple_tree.h">https://github.com/torvalds/linux/tree/master/include/linux/maple_tree.h</a></li>
 </ul>
 </div>
 <div class="section" id="scalable-os-faster-uprobes-using-user-mode-ebpf-kumar-kartikeya-dwivedi">
