@@ -28,7 +28,7 @@
 
     <link href="../theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
-        <link href="../assets/css/rs3lab.css?1759428252.724905" rel="stylesheet">
+        <link href="../assets/css/rs3lab.css?1763647724.778975" rel="stylesheet">
 
 
 
@@ -141,6 +141,37 @@ application in a rack scale environment.</li>
 <hr class="docutils" />
 <div class="section" id="projects-for-bachelors-and-masters-students">
 <h2>Projects for Bachelors and Masters students</h2>
+<div class="section" id="performance-ebpf-performance-modeling-of-ebpf-programs-tao-lyu">
+<h3>[Performance/eBPF] Performance Modeling of eBPF Programs (Tao Lyu)</h3>
+<p>eBPF enables 1) customizing the policies of kernel subsystems
+(e.g., scheduling policy, page eviction policy) and
+2) offloading application logic to the kernel as a fast path.
+In both scenarios, eBPF programs (also known as kernel extensions)
+reside at the performance-critical paths.
+Therefore, they should be as performant as possible.
+Otherwise, eBPF programs can be counterproductive:
+instead of improving kernel performance, they actually degrade it.</p>
+<p>Unfortunately, performance issues are common because
+(1) eBPF applications are updated frequently,
+often without rigorous performance review, making them more error-prone;
+and (2) many eBPF developers aren’t kernel experts and lack familiarity
+with the performance characteristics and micro-optimizations of hot kernel paths.
+Unlike safety, which the eBPF verifier forcefully guarantees,
+the ecosystem overlooks this equally important concern:
+performance due to the overshadowed of the focus on safety.</p>
+<p>In this project, we call on the community to
+also focus on the performance clarity of eBPF programs.
+Ideally, in this project, we aim to design a scalable and
+accurate performance model for eBPF programs.
+This model, acting as a building block,
+can further be utilized in various use cases, including:</p>
+<ul class="simple">
+<li>Performance quantification: Quantify the performance of each line of programs with explanations to help people understand their performance.</li>
+<li>Performance debugging: based on the performance quantification, either manually or semi-automatically adjust programs to achieve better performance.</li>
+<li>Performance check: Check the new program’s performance against that of functionally equivalent baselines, serving as oracles. This performance check is optional for developers, rather than being mandatory like the safety verification.</li>
+</ul>
+<p>Targeting students who want to do a thesis or long-term research.</p>
+</div>
 <div class="section" id="safety-security-online-ebpf-verifier-specification-explorer-tao-lyu">
 <h3>[Safety/Security] Online eBPF verifier specification explorer (Tao Lyu)</h3>
 <p>eBPF compilation today is tightly coupled to specific Clang and Linux-kernel versions,
