@@ -28,7 +28,7 @@
 
     <link href="../theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
-        <link href="../assets/css/rs3lab.css?1763649688.7514925" rel="stylesheet">
+        <link href="../assets/css/rs3lab.css?1764166048.9938426" rel="stylesheet">
 
 
 
@@ -171,38 +171,6 @@ can further be utilized in various use cases, including:</p>
 <li>Performance check: Check the new program’s performance against that of functionally equivalent baselines, serving as oracles. This performance check is optional for developers, rather than being mandatory like the safety verification.</li>
 </ul>
 <p>Targeting students who want to do a thesis or long-term research.</p>
-</div>
-<div class="section" id="safety-security-online-ebpf-verifier-specification-explorer-tao-lyu">
-<h3>[Safety/Security] Online eBPF verifier specification explorer (Tao Lyu)</h3>
-<p>eBPF compilation today is tightly coupled to specific Clang and Linux-kernel versions,
-and the safety guarantees enforced by the in-kernel eBPF verifier are opaque,
-making it hard for developers and researchers to explore exactly which properties are being checked
-either by running programs or manually checking the verifier.</p>
-<p>Our latest research paper proposes and implements the first specification for eBPF verifier.
-Now, we want to make that specification accessible and interactive---so
-anyone can write small eBPF programs online and immediately see which safety checks they satisfy or violate.</p>
-<p>To do so, this project aims to implement a website base on
-[compiler explorer](<a class="reference external" href="https://github.com/compiler-explorer/compiler-explorer">https://github.com/compiler-explorer/compiler-explorer</a>),
-where users can:</p>
-<ul class="simple">
-<li>paste or write eBPF C code</li>
-<li>invoke our SMT-based verifier specification</li>
-<li>view detailed, human-readable feedback on which safety conditions pass or fail</li>
-<li>except the web site, you will also learn about SMT-based formal verification.</li>
-</ul>
-<p>What You’ll Learn:</p>
-<ul class="simple">
-<li>Web-application setup and deployment (host your own Compiler Explorer instance)</li>
-<li>Integrating a C-to-BPF toolchain (Clang + LLVM) with a custom back-end</li>
-<li>Encoding program properties into SMT formulas and interpreting solver outputs</li>
-<li>Basics of formal methods applied to low-level systems code</li>
-</ul>
-<p>Prerequisite:</p>
-<ul class="simple">
-<li>Familiar with setting up and customizing web services (or eager to learn)</li>
-<li>Interest in formal verification, especially SMT-based approaches</li>
-<li>Familiarity with C programming and the Linux environment is a plus</li>
-</ul>
 </div>
 <div class="section" id="memory-management-memory-allocators-in-tiered-memory-musa-unal">
 <h3>[Memory Management] Memory allocators in tiered memory (Musa Unal)</h3>
