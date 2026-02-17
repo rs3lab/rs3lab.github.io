@@ -28,7 +28,7 @@
 
     <link href="../theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
-        <link href="../assets/css/rs3lab.css?1771340973.281415" rel="stylesheet">
+        <link href="../assets/css/rs3lab.css?1771341248.4640915" rel="stylesheet">
 
 
 
@@ -236,38 +236,6 @@ However, based on different access patterns these data structures might not be o
 <li>Hash Table: <a class="reference external" href="https://github.com/torvalds/linux/tree/master/include/linux/hashtable.h">https://github.com/torvalds/linux/tree/master/include/linux/hashtable.h</a></li>
 <li>Red-Black Tree: <a class="reference external" href="https://github.com/torvalds/linux/tree/master/include/linux/rbtree.h">https://github.com/torvalds/linux/tree/master/include/linux/rbtree.h</a></li>
 <li>Maple Tree: <a class="reference external" href="https://github.com/torvalds/linux/tree/master/include/linux/maple_tree.h">https://github.com/torvalds/linux/tree/master/include/linux/maple_tree.h</a></li>
-</ul>
-</div>
-<div class="section" id="scalable-os-faster-uprobes-using-user-mode-ebpf-kumar-kartikeya-dwivedi">
-<h3>[Scalable OS] Faster Uprobes using User Mode eBPF  (Kumar Kartikeya Dwivedi)</h3>
-<p>BPF based tracing is used to execute programs and collect data when certain
-functions are triggered in the kernel. The same is possible in user space using
-the ‘user probes’ feature, where programs are executed when USDT probes are
-triggered within the user space applications. However, currently the
-implementation of uprobes requires trapping in to the kernel whenever an event
-occurs, leading to slowdowns in applications, and being up to 2x slower than
-system call context switches. This project explores whether the inception of a
-new ‘user mode eBPF’ mode and making uprobes execute such program types in user
-space will be faster and have the same level of usability. The ideal end goal
-would be to attain transparent 100% compatibility with the current uprobe
-mechanism.</p>
-<p>In this project, you will:</p>
-<ul class="simple">
-<li>Develop a deep understanding of the eBPF verifier’s static analysis process.</li>
-<li>Create a new ‘user mode eBPF’ program type for eBPF.</li>
-<li>Measure and benchmark usability and performance differences between the
-current uprobe mechanism and the one based on user mode eBPF.</li>
-</ul>
-<p>Prerequisite:</p>
-<ul class="simple">
-<li>A basic level of understanding of eBPF.</li>
-<li>Proficiency in C and Python.</li>
-</ul>
-<p>References:</p>
-<ul class="simple">
-<li><a class="reference external" href="https://lwn.net/Articles/753601">https://lwn.net/Articles/753601</a></li>
-<li><a class="reference external" href="https://lore.kernel.org/bpf/20211116013041.4072571-1-andrii&#64;kernel.org">https://lore.kernel.org/bpf/20211116013041.4072571-1-andrii&#64;kernel.org</a></li>
-<li><a class="reference external" href="https://www.brendangregg.com/blog/2015-06-28/linux-ftrace-uprobe.html">https://www.brendangregg.com/blog/2015-06-28/linux-ftrace-uprobe.html</a></li>
 </ul>
 </div>
 <div class="section" id="systems-for-ml-improving-the-performance-of-ml-workloads-yueyang-pan">
