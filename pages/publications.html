@@ -12,13 +12,13 @@
 <link rel="canonical" href="../pages/publications.html">
 
         <meta name="author" content="RS3Lab" />
-        <meta name="description" content="/* show scroll bar to prevent jumps when filtering */ /* html { overflow-y: scroll; } */ /* hide sidebar and title */ .entry-title { display: none; } #sidebar { display: none; } 2026 Operation-Aware Hybrid Locking for Modern In-Memory Indexes Vishal Gupta, Martin Sanchez Lopez, Victor Laforet, Jean-Pierre Lozi, and Sanidhya Kashyap. VLDB 2026. Achieving scalable performance in modern in-memory indexes …" />
+        <meta name="description" content="/* show scroll bar to prevent jumps when filtering */ /* html { overflow-y: scroll; } */ /* hide sidebar and title */ .entry-title { display: none; } #sidebar { display: none; } 2027 Know Thy State: Placement Cues for Query Operator States on Tiered Memory Abdelrahman Adel, Georgiy Lebedev, Marcel Weisgut, Jana Giceva, Sanidhya Kashyap, and Anastasia Ailamaki. CIDR 2027. Remote …" />
 
     <meta property="og:site_name" content="RS3Lab" />
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="Publications"/>
     <meta property="og:url" content="../pages/publications.html"/>
-    <meta property="og:description" content="/* show scroll bar to prevent jumps when filtering */ /* html { overflow-y: scroll; } */ /* hide sidebar and title */ .entry-title { display: none; } #sidebar { display: none; } 2026 Operation-Aware Hybrid Locking for Modern In-Memory Indexes Vishal Gupta, Martin Sanchez Lopez, Victor Laforet, Jean-Pierre Lozi, and Sanidhya Kashyap. VLDB 2026. Achieving scalable performance in modern in-memory indexes …" />
+    <meta property="og:description" content="/* show scroll bar to prevent jumps when filtering */ /* html { overflow-y: scroll; } */ /* hide sidebar and title */ .entry-title { display: none; } #sidebar { display: none; } 2027 Know Thy State: Placement Cues for Query Operator States on Tiered Memory Abdelrahman Adel, Georgiy Lebedev, Marcel Weisgut, Jana Giceva, Sanidhya Kashyap, and Anastasia Ailamaki. CIDR 2027. Remote …" />
 
 
 
@@ -28,7 +28,7 @@
 
     <link href="../theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
-        <link href="../assets/css/rs3lab.css?1776961318.411295" rel="stylesheet">
+        <link href="../assets/css/rs3lab.css?1791543276.4943106" rel="stylesheet">
 
 
 
@@ -93,6 +93,48 @@ RS3Lab            </a>
 
   <div class="col-sm-2" id="filter"><input class="filter-state" style="display:none" /></div>
   <div class="col-sm-10">
+ <h2>2027</h2>
+<div id="adel:knowthystate" class="pub-id"></div>
+<div class="pub" data-type="Conference paper" data-topic="System" data-key="adel:knowthystate">
+ <div class="pub-meta">
+  <div class="pub-links">
+  </div>
+  <span class="pub-title">Know Thy State: Placement Cues for Query Operator States on Tiered Memory</span>
+  <a href="#adel:knowthystate" class="pub-expand"><i class="icon-expand"></i></a>
+  <a href="#/" class="pub-collapse"><i class="icon-collapse"></i></a>
+  <span class="pub-author">Abdelrahman Adel, Georgiy Lebedev, Marcel Weisgut, Jana Giceva, Sanidhya Kashyap, and Anastasia Ailamaki.</span>
+  <abbr class="pub-in" title="Proceedings of the 17th Annual Conference on Innovative Data Systems Research (CIDR), Amsterdam, The Netherlands, January 2027.">CIDR 2027.</abbr>
+ </div>
+ <div class="pub-details">
+<p>Remote byte-addressable memory (e.g., CXL-attached DRAM) is entering data
+centers, expanding server memory capacity by terabytes with access latency
+&gtrsim;2&times; that of local DRAM. When executing analytical queries, the
+query engine must allocate memory for operator states such as join hash
+tables. Common memory management approaches greedily fill local memory in
+allocation order and react afterward using black-box signals such as access
+recency and hit rate. Yet the cost of remote placement depends on the
+semantic properties of each state and how it is accessed. Crucially, the
+query engine knows these properties from the physical plan and table
+metadata before allocating any state, but it never passes them to the
+memory manager.</p>
+<p>In this paper, we conduct an empirical placement sensitivity study,
+analyzing which of the state access semantics drive the cost of placing
+operator state in CXL vs. local memory. Using hash joins, one of the most
+commonly used stateful operators, we show that operator states span a
+<em>spectrum of tolerance</em> to remote memory latency. We argue that these
+properties should become placement <em>cues</em>. We envision emitting a per-state
+descriptor of placement cues as a first-class output of query planning,
+paving the way for dataflow-aware memory management on tiered memory.</p>
+  <pre>@inproceedings{adel:knowthystate,
+  title        = {{Know Thy State: Placement Cues for Query Operator States on Tiered Memory}},
+  author       = {Abdelrahman Adel and Georgiy Lebedev and Marcel Weisgut and Jana Giceva and Sanidhya Kashyap and Anastasia Ailamaki},
+  booktitle    = {Proceedings of the 17th Annual Conference on Innovative Data Systems Research (CIDR)},
+  month        = jan,
+  year         = 2027,
+  address      = {Amsterdam, The Netherlands},
+}</pre>
+ </div>
+</div>
  <h2>2026</h2>
 <div id="gupta:opal" class="pub-id"></div>
 <div class="pub" data-type="Conference paper" data-topic="Concurrency" data-key="gupta:opal">
