@@ -28,7 +28,7 @@
 
     <link href="../theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
-        <link href="../assets/css/rs3lab.css?1791543276.4943106" rel="stylesheet">
+        <link href="../assets/css/rs3lab.css?1791548795.404245" rel="stylesheet">
 
 
 
@@ -299,6 +299,47 @@ throughput by up to 2.43× and reduces latency by 80%.</p>
   month        = oct,
   year         = 2025,
   address      = {Seoul, Korea},
+}</pre>
+ </div>
+</div>
+<div id="lebedev:cxlbw" class="pub-id"></div>
+<div class="pub" data-type="Conference paper" data-topic="System" data-key="lebedev:cxlbw">
+ <div class="pub-meta">
+  <div class="pub-links">
+   <a title="Slides" href="../assets/papers/2025/lebedev:cxlbw-slides.pdf"><i class="icon-slides"></i></a>
+   <a title="Paper" href="../assets/papers/2025/lebedev:cxlbw.pdf"><i class="icon-file"></i></a>
+  </div>
+  <span class="pub-title">Demystifying CXL Memory Bandwidth Expansion for Analytical Workloads</span>
+  <a href="#lebedev:cxlbw" class="pub-expand"><i class="icon-expand"></i></a>
+  <a href="#/" class="pub-collapse"><i class="icon-collapse"></i></a>
+  <span class="pub-author">Georgiy Lebedev, Hamish Nicholson, Musa &#220;nal, Sanidhya Kashyap, and Anastasia Ailamaki.</span>
+  <abbr class="pub-in" title="Proceedings of the 16th International Workshop on Accelerating Analytics and Data Management Systems Using Modern Processor and Storage Architectures (ADMS), London, UK, September 2025.">ADMS 2025.</abbr>
+ </div>
+ <div class="pub-details">
+<p>The bottleneck of modern data-intensive applications is increasingly
+shifting towards memory access, as the CPU core count growth continues to
+outpace the available DRAM bandwidth. The CXL protocol has emerged as a
+technological solution to this problem, offering software applications
+transparent cache-coherent access to additional memory resources. Recent
+work has shown that a proper interleaving configuration of DRAM and CXL
+memory can improve the performance of bandwidth-intensive analytical
+workloads, and that a single interleaving configuration can give optimal
+performance across any workloads.</p>
+<p>In this paper, we revisit CXL memory bandwidth expansion for analytical
+workloads. We find that interleaving DRAM and CXL memory transparently to
+a state-of-the-art query execution engine Proteus, when running the SSB
+workload, degrades its average performance by 20%. We show that realizing
+the full potential of CXL memory bandwidth expansion requires efficient
+hardware utilization through maximizing memory-level parallelism and
+adapting to the workload's access patterns and characteristics.</p>
+  <pre>@inproceedings{lebedev:cxlbw,
+  title        = {{Demystifying CXL Memory Bandwidth Expansion for Analytical Workloads}},
+  author       = {Georgiy Lebedev and Hamish Nicholson and Musa {\&quot;U}nal and Sanidhya Kashyap and Anastasia Ailamaki},
+  booktitle    = {Proceedings of the 16th International Workshop on Accelerating Analytics and Data Management Systems Using Modern Processor and
+    Storage Architectures (ADMS)},
+  month        = sep,
+  year         = 2025,
+  address      = {London, UK},
 }</pre>
  </div>
 </div>
